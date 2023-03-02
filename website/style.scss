@@ -1,6 +1,13 @@
+@keyframes clicky_button {
+
+}
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Space Mono', monospace;
+    color: white;
+    user-select: none;
 }
 
 body {
@@ -12,20 +19,41 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
 
         #title {
-            color: white;
-            user-select: none;
             font-size: 32pt;
-            font-family: 'Space Mono', monospace;
         }
-    }
 
-    #magyar_falu_program {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 100px;
-        margin: 10px;
+        #magyar_falu_program {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 100px;
+            margin: 10px;
+        }
+    
+        #button_div {
+
+            #download_button{
+                background-color: #fff;
+                border-radius: 20px;
+                font-size: 20px;
+                padding: 10px 70px 10px 70px;
+                display: inline-block;
+                margin: 20px;
+                border: 0;
+
+                #download_img {
+                    transform: translateY(6px);
+                    width: 45px;
+                }
+            }
+
+            #download_button:hover {
+                background-color: #fffd;
+                cursor: pointer;
+            }
+        }
     }
 }

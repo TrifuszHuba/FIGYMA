@@ -1,30 +1,66 @@
-* {
+@-webkit-keyframes clicky_button {}@keyframes clicky_button {}* {
   margin: 0;
   padding: 0;
+  font-family: 'Space Mono', monospace;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 body {
   background-color: #000;
 }
+
 body #container {
   width: 100vw;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 body #container #title {
-  color: white;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
   font-size: 32pt;
-  font-family: "Space Mono", monospace;
 }
-body #magyar_falu_program {
+
+body #container #magyar_falu_program {
   position: absolute;
   bottom: 0;
   right: 0;
   height: 100px;
   margin: 10px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+body #container #button_div #download_button {
+  background-color: #fff;
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 10px 70px 10px 70px;
+  display: inline-block;
+  margin: 20px;
+  border: 0;
+}
+
+body #container #button_div #download_button #download_img {
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  width: 45px;
+}
+
+body #container #button_div #download_button:hover {
+  background-color: #fffd;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
