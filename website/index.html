@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/hamburger.css">
     <title>Használtember.hu - eladó használt és új ember kereső</title>
 </head>
+
 <body>
+
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <a target="_blank"
+                    href="https://github.com/TrifuszHuba/hasznaltember.hu/projects?query=is%3Aopen">Projects</a>
+                <a target="_blank" href="#"> About</a>
+                <a target="_blank" href="#">Info</a>
+                <a target="_blank" href="#">Contact</a>
+            </ul>
+        </div>
+    </nav>
+
     <div id="container">
         <div id="title">HASZNÁLTEMBER.HU</div>
         <div id="subtext">"Nagyon jó ügyvédeink vannak."</div>
         <div id="button_div">
-            <button id="download_button"><img src="download.png" id="download_img"></button>
+            <button id="download_button" type="submit" onclick="window.open('img/image.jfif')">
+                <img src="download.png" id="download_img">
+            </button>
         </div>
-        <div >
+        <div>
             <img src="img/magyar_falu_program.png" id="magyar_falu_program">
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
