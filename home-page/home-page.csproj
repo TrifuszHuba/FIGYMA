@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>home_page</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
