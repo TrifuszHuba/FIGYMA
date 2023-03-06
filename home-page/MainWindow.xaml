@@ -6,15 +6,105 @@
         xmlns:local="clr-namespace:home_page"
         mc:Ignorable="d"
         Background="#343A40"
-        Title="Home" Height="1080" Width="1920">
+        Title="Home" Height="1080" Width="1920"
+        FontSize="36">
 
     <Grid Height="1080" Width="1920">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Vertical" Grid.Column="0" Background="#DEE2E6" Margin="0,0,1510,0">
-
+        <StackPanel Width="400" Height="1080" Background="#DEE2E6">
+            <ComboBox Width="398" Height="55" Margin="0,10,0,15"  Background="#ADB5BD">
+                <ComboBoxItem Content="Állapot" IsSelected="True" Visibility="Collapsed"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+            </ComboBox>
+            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
+                <ComboBoxItem Content="Tömeg" IsSelected="True" Visibility="Collapsed"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+            </ComboBox>
+            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
+                <ComboBoxItem Content="Típus" IsSelected="True" Visibility="Collapsed"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+            </ComboBox>
+            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
+                <ComboBoxItem Content="Magasság" IsSelected="True" Visibility="Collapsed"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+            </ComboBox>
+            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
+                <ComboBoxItem Content="valami" IsSelected="True" Visibility="Collapsed"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+            </ComboBox>
+            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
+                <ComboBoxItem Content="valami" IsSelected="True" Visibility="Collapsed"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+            </ComboBox>
+            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
+                <ComboBoxItem Content="valami" IsSelected="True" Visibility="Collapsed"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+            </ComboBox>
+            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
+                <ComboBoxItem Content="valami" IsSelected="True" Visibility="Collapsed"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+            </ComboBox>
+            <ComboBox Width="398" Height="55" Margin="0,0,0,20" Background="#ADB5BD">
+                <ComboBoxItem Content="valami" IsSelected="True" Visibility="Collapsed"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+            </ComboBox>
+            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
+                <ComboBoxItem Content="valami" IsSelected="True" Visibility="Collapsed"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+                <ComboBoxItem Content="***"/>
+            </ComboBox>
         </StackPanel>
         <Image x:Name="mainPicture" Grid.Column="1" HorizontalAlignment="Left" Height="800" Width="550" Margin="170,64,0,266" Source="/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" Stretch="UniformToFill"/>
         <Image Grid.Column="1" HorizontalAlignment="Left" Height="120" Margin="170,912,0,0" VerticalAlignment="Top" Width="120" Source="/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" Stretch="UniformToFill"/>
@@ -35,18 +125,18 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBox x:Name="personData" Grid.Column="1" HorizontalAlignment="Left" Margin="910,64,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="800" Width="550"/>
-        <Button x:Name="NObutton" Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="994,918,0,0" VerticalAlignment="Top" Width="120" Height="120">
+        <TextBox x:Name="personData" Grid.Column="1" HorizontalAlignment="Left" Margin="910,64,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="800" Width="550" Background="#DEE2E6"/>
+        <Button x:Name="NObutton" Grid.Column="1" Content="*cross*" HorizontalAlignment="Left" Margin="994,918,0,0" VerticalAlignment="Top" Width="120" Height="120">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="40"/>
+                    <Setter Property="CornerRadius" Value="60"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="YESbutton" Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="1326,928,0,0" VerticalAlignment="Top" Width="120" Height="120">
+        <Button x:Name="YESbutton" Grid.Column="1" Content="*tick*" HorizontalAlignment="Left" Margin="1288,918,0,0" VerticalAlignment="Top" Width="120" Height="120">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="40"/>
+                    <Setter Property="CornerRadius" Value="60"/>
                 </Style>
             </Button.Resources>
         </Button>
