@@ -37,7 +37,16 @@ namespace Hasznaltember
 
         private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Mégnagyobb majom");
+            MessageBox.Show(pbPassword.Password);
+        }
+
+        private void PasswordChangedHandler(object sender, RoutedEventArgs args)
+        {
+            tblPassword.Text = "";
+            if(pbPassword.Password == "")
+            {
+                tblPassword.Text = "password";
+            }
         }
     }
 }

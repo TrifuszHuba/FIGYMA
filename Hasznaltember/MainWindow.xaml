@@ -13,14 +13,14 @@
         <Label Content="." HorizontalAlignment="Left" Margin="1128,-413,0,0" VerticalAlignment="Top" FontSize="460px" Height="774" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Foreground="#495057" />
         <Label Content="hu" HorizontalAlignment="Left" Margin="1211,134,0,0" VerticalAlignment="Top" Height="116" Width="123" FontSize="96px" FontStyle="Italic" Foreground="#ADB5BD"/>
         <Label Content="Login" HorizontalAlignment="Center" Margin="0,406,0,0" VerticalAlignment="Top" Height="64" Width="116" FontSize="40px" Foreground="White" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="tbUsername" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,514,0,0" Background="#DEE2E6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px">
+        <TextBox x:Name="tbUsername" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,514,0,0" Background="#DEE2E6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px" Opacity="0.5">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBlock IsHitTestVisible="False" Text="username" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,524,0,0" Foreground="Black" FontSize="16px">
+        <TextBlock IsHitTestVisible="False" Text="username" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,524,0,0" Foreground="Black" FontSize="16px" Opacity="0.8">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -32,14 +32,14 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <PasswordBox x:Name="tbPassword" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,574,0,0" Background="#DEE2E6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px">
-            <PasswordBox.Resources>
+        <TextBox x:Name="tbPassword" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,574,0,0" Background="#DEE2E6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px">
+            <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
                 </Style>
-            </PasswordBox.Resources>
-        </PasswordBox>
-        <TextBlock IsHitTestVisible="False" Text="password" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,584,0,0" Foreground="Black" FontSize="16px">
+            </TextBox.Resources>
+        </TextBox>
+        <TextBlock x:Name="tblPassword" IsHitTestVisible="False" Text="password" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,584,0,0" Foreground="Black" FontSize="16px">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -72,5 +72,6 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <PasswordBox x:Name="pbPassword" PasswordChanged="PasswordChangedHandler" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,574,0,0" Background="#343A40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px" Opacity="0.5" BorderBrush="#343A40" Foreground="Black"/>
     </Grid>
 </Window>
