@@ -1,0 +1,5 @@
+Állapot -> kitűnő, megkímélt, újszerű, sérülésmentes, sérült
+Tömeg -> 30-45, 45-60, 60-75, 75-90, 90-105, 105-120, 120-135, 135-150, Caterpillar 795F AC
+Magasság -> two point scale
+Típus ->
+Év -> tól-ig
