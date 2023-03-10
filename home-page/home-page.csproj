@@ -10,10 +10,14 @@
 
   <ItemGroup>
     <None Remove="My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" />
+    <None Remove="samoyed.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="samoyed.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
