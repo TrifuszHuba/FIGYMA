@@ -12,7 +12,7 @@
         <Label Content="." HorizontalAlignment="Left" Margin="1124,-401,0,0" VerticalAlignment="Top" FontSize="500px" Height="774" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Foreground="#ADB5BD" />
         <Label Content="." HorizontalAlignment="Left" Margin="1128,-413,0,0" VerticalAlignment="Top" FontSize="460px" Height="774" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Foreground="#495057" />
         <Label Content="hu" HorizontalAlignment="Left" Margin="1211,134,0,0" VerticalAlignment="Top" Height="116" Width="123" FontSize="96px" FontStyle="Italic" Foreground="#ADB5BD"/>
-        <Label Content="Create account" HorizontalAlignment="Center" Margin="0,406,0,0" VerticalAlignment="Top" Height="64" Width="625" FontSize="40px" Foreground="White" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
+        <Label Content="Regisztráció" HorizontalAlignment="Center" Margin="0,406,0,0" VerticalAlignment="Top" Height="64" Width="625" FontSize="40px" Foreground="White" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
         <TextBox x:Name="tbUsernameCreate" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,514,0,0" Background="#DEE2E6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px" Opacity="0.5">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -20,7 +20,7 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBlock IsHitTestVisible="False" Text="Username" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,524,0,0" Foreground="Black" FontSize="16px" Opacity="0.8">
+        <TextBlock IsHitTestVisible="False" Text="Felhasználónév" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,524,0,0" Foreground="Black" FontSize="16px" Opacity="0.8">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -39,7 +39,7 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBlock IsHitTestVisible="False" Text="Email adress" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,584,0,0" Foreground="Black" FontSize="16px" Opacity="0.8">
+        <TextBlock IsHitTestVisible="False" Text="Email cím" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,584,0,0" Foreground="Black" FontSize="16px" Opacity="0.8">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -58,7 +58,7 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBlock IsHitTestVisible="False" Text="Password" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,644,0,0" Foreground="Black" FontSize="16px" Opacity="0.8">
+        <TextBlock IsHitTestVisible="False" Text="Jelszó" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,644,0,0" Foreground="Black" FontSize="16px" Opacity="0.8">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -77,7 +77,7 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBlock IsHitTestVisible="False" Text="Repeat password" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,704,0,0" Foreground="Black" FontSize="16px" Opacity="0.8">
+        <TextBlock IsHitTestVisible="False" Text="Jelszó ismét" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,704,0,0" Foreground="Black" FontSize="16px" Opacity="0.8">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -89,7 +89,7 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <Button x:Name="btnCreateAccount" Content="create account" HorizontalAlignment="Center" Margin="0,758,0,0" VerticalAlignment="Top" Height="45" Width="164" FontSize="16px" Click="btnCreateAccount_Click">
+        <Button x:Name="btnCreateAccount" Content="regisztráció" HorizontalAlignment="Center" Margin="0,758,0,0" VerticalAlignment="Top" Height="45" Width="164" FontSize="16px" Click="btnCreateAccount_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>

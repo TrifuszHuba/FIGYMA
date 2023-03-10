@@ -27,6 +27,7 @@ namespace Hasznaltember
         private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Kezdődhet a vadászat, grrr");
+            MessageBox.Show("Majom");
         }
     }
 }
