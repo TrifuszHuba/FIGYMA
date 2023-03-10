@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hasznaltember"
         mc:Ignorable="d"
-        Title="Használtember" Height="1080" Width="1920"
+        Title="Használtember/bejelentkezés" Height="1080" Width="1920"
         Background="#343A40" WindowState="Maximized">
     <Grid>
         <Label Content="Használtember" HorizontalAlignment="Left" Margin="528,134,0,0" VerticalAlignment="Top" Height="116" Width="636" FontSize="96px" FontStyle="Italic" Foreground="#ADB5BD"/>

@@ -32,12 +32,15 @@ namespace Hasznaltember
 
         private void btnforgotPassword_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Majom:");
+            ResetPassword resetPassword = new ResetPassword();
+            resetPassword.Show();
         }
 
         private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(pbPassword.Password);
+            CreateAccount createAccount = new CreateAccount();
+            createAccount.Show();
+            
         }
 
         private void PasswordChangedHandler(object sender, RoutedEventArgs args)

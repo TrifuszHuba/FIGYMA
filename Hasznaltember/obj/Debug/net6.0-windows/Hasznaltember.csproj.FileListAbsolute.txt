@@ -4,11 +4,9 @@ Z:\_IKT\hasznaltember.hu\Hasznaltember\bin\Debug\net6.0-windows\Hasznaltember.ru
 Z:\_IKT\hasznaltember.hu\Hasznaltember\bin\Debug\net6.0-windows\Hasznaltember.dll
 Z:\_IKT\hasznaltember.hu\Hasznaltember\bin\Debug\net6.0-windows\Hasznaltember.pdb
 Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\Hasznaltember.csproj.AssemblyReference.cache
-Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\MainWindow.g.cs
 Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\App.g.cs
 Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\Hasznaltember_MarkupCompile.cache
 Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\Hasznaltember_MarkupCompile.lref
-Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\MainWindow.baml
 Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\Hasznaltember.g.resources
 Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\Hasznaltember.GeneratedMSBuildEditorConfig.editorconfig
 Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\Hasznaltember.AssemblyInfoInputs.cache
@@ -19,3 +17,9 @@ Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\refint\Hasznalte
 Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\Hasznaltember.pdb
 Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\Hasznaltember.genruntimeconfig.cache
 Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\ref\Hasznaltember.dll
+Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\CreateAccount.g.cs
+Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\CreateAccount.baml
+Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\ResetPassword.g.cs
+Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\ResetPassword.baml
+Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\MainWindow.g.cs
+Z:\_IKT\hasznaltember.hu\Hasznaltember\obj\Debug\net6.0-windows\MainWindow.baml

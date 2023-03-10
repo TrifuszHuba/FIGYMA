@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 Z:\_IKT\hasznaltember.hu\Hasznaltember\App.xaml
-11407045341
+3-840067472
 
-5165688483
+7558542994
 194-200944676
-MainWindow.xaml;
+CreateAccount.xaml;MainWindow.xaml;ResetPassword.xaml;
 
 True
 
