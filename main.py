@@ -1,5 +1,6 @@
 import os
 import openai
+import requests
 
 openai.api_key = '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'
 response = openai.Image.create(
@@ -9,4 +10,6 @@ response = openai.Image.create(
 )
 image_url = response['data'][0]['url']
 
-print(image_url)
+img_data = requests.get(image_url).content
+with open('test.jpg', 'wb') as handler:
+    handler.write(img_data)
