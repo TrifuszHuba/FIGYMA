@@ -31,28 +31,5 @@ body {
             height: 100px;
             margin: 10px;
         }
-
-        #button_div {
-
-            #download_button {
-                background-color: #fff;
-                border-radius: 20px;
-                font-size: 20px;
-                padding: 10px 70px 10px 70px;
-                display: inline-block;
-                margin: 20px;
-                border: 0;
-
-                #download_img {
-                    transform: translateY(4px);
-                    width: 45px;
-                }
-            }
-
-            #download_button:hover {
-                background-color: #fffd;
-                cursor: pointer;
-            }
-        }
     }
 }
