@@ -16,58 +16,59 @@
         </Grid.ColumnDefinitions>
         <StackPanel Width="400" Height="1080" Background="#DEE2E6">
             <ComboBox  Width="398" Height="55" Margin="0,10,0,15"  Background="#ADB5BD">
+                <ComboBoxItem Content="Típus" IsSelected="True" Visibility="Collapsed" />
+                <CheckBox Content="Férfi"/>
+                <CheckBox Content="Nő"/>
+            </ComboBox>
+            <ComboBox  Width="398" Height="55" Margin="0,10,0,15"  Background="#ADB5BD">
                 <ComboBoxItem Content="Állapot" IsSelected="True" Visibility="Collapsed" />
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Kitűnő" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Újszerű" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Megkímélt" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Sérülésmentes" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Sérült" Selected="ComboBoxItem_Selected"/>
             </ComboBox>
             <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
                 <ComboBoxItem Content="Tömeg" IsSelected="True" Visibility="Collapsed"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="30-45kg" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="45-60kg" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="60-75kg" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="75-90kg" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="90-105kg" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="105-120kg" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="120-135kg" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="105-120kg" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Caterpillar 795F AC" Selected="ComboBoxItem_Selected"/>
             </ComboBox>
             <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
-                <ComboBoxItem Content="Típus" IsSelected="True" Visibility="Collapsed"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Kivitel" IsSelected="True" Visibility="Collapsed"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="" Width="75" TextAlignment="Center"/>
+                    <Label Content="-tól"></Label>
+                     <TextBox Text="" Width="75" TextAlignment="Center"/>
+                    <Label Content="-ig"/>
+                    <Label Content="[cm]" Margin="30,0,0,0"/>
+                </StackPanel>
             </ComboBox>
             <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
-                <ComboBoxItem Content="Magasság" IsSelected="True" Visibility="Collapsed"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Modell" IsSelected="True" Visibility="Collapsed"/>
+                <Slider />
             </ComboBox>
             <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
-                <ComboBoxItem Content="valami" IsSelected="True" Visibility="Collapsed"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Évjárat" IsSelected="True" Visibility="Collapsed"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="" Width="100" TextAlignment="Center"/>
+                    <Label Content="-tól"></Label>
+                    <TextBox Text="" Width="100" TextAlignment="Center"/>
+                    <Label Content="-ig"/>
+                </StackPanel>
             </ComboBox>
             <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
-                <ComboBoxItem Content="valami" IsSelected="True" Visibility="Collapsed"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="***" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Ellenőrizhető előélet" IsSelected="True" Visibility="Collapsed"/>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton Content="Igen"/>
+                    <RadioButton Content="Nem" Margin="100,0,0,0"/>
+                </StackPanel>
             </ComboBox>
             <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
                 <ComboBoxItem Content="valami" IsSelected="True" Visibility="Collapsed"/>
