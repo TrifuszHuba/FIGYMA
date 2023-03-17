@@ -3,14 +3,14 @@ import openai
 import requests
 import base64
 
-f = open('test_options.txt', 'r')
-input = f.read()
-f.close()
+file = open('test_options.txt', 'r')
+input = file.read()
+file.close()
 
 
 try:
     api_key = open("api_key.txt", "r", encoding="utf-8").read()
-    openai.api_key = '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'
+    openai.api_key = api_key
     response = openai.Image.create(
         prompt=input,
         n=5,
