@@ -36,6 +36,36 @@ namespace home_page
             mainPicture.Source = image.Source;
             image.Source = mainPicture.Source;
         }
+        private void minusButton_Click(object sender, RoutedEventArgs e)
+        {
+            int doorsNum = int.Parse(tbDoors.Text);
+
+            if (doorsNum > -1)
+            {
+                doorsNum--;
+                tbDoors.Text = doorsNum.ToString();
+            }
+        }
+
+        private void plusButton_Click(object sender, RoutedEventArgs e)
+        {
+            int doorsNum = int.Parse(tbDoors.Text);
+
+            if (doorsNum < 5 && chbMale.IsChecked == true)
+            {
+                doorsNum++;
+                tbDoors.Text = doorsNum.ToString();
+            }
+            else if (doorsNum < 4)
+            {
+                doorsNum++;
+                tbDoors.Text = doorsNum.ToString();
+            }
+        }
+
+
+        // options: alap: Típus
+        //  kiválasztott: Típus: Férfi
 
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
@@ -61,5 +91,6 @@ namespace home_page
         {
             // Weöres Sándor: Baszás, szex, kúrás
         }
+
     }
 }
