@@ -6,7 +6,10 @@ import base64
 f = open('test_options.txt', 'r')
 input = f.read()
 f.close()
+
+
 try:
+    api_key = open("api_key.txt", "r", encoding="utf-8").read()
     openai.api_key = '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'
     response = openai.Image.create(
         prompt=input,
@@ -21,7 +24,6 @@ try:
         with open(f'img{i}.jpg', 'wb') as handler:
             handler.write(img_data)
 
-    # a *tomeg*, *kivitel*, *modell*, *evjarat* *tipus* with *teto szin*
 except openai.error.AuthenticationError:
     print("Incorrect API key provided.")
 
