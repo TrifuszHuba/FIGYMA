@@ -28,7 +28,7 @@
                     </CheckBox.LayoutTransform>
                 </CheckBox>
             </ComboBox>
-            <ComboBox  Width="398" Height="55" Margin="0,10,0,15"  Background="#ADB5BD">
+            <ComboBox x:Name="cbCondition"  Width="398" Height="55" Margin="0,10,0,15"  Background="#ADB5BD">
                 <ComboBoxItem Content="Állapot" IsSelected="True" Visibility="Collapsed" />
                 <ComboBoxItem Content="Kitűnő" Selected="ComboBoxItem_Selected"/>
                 <ComboBoxItem Content="Újszerű" Selected="ComboBoxItem_Selected"/>
@@ -36,7 +36,7 @@
                 <ComboBoxItem Content="Sérülésmentes" Selected="ComboBoxItem_Selected"/>
                 <ComboBoxItem Content="Sérült" Selected="ComboBoxItem_Selected"/>
             </ComboBox>
-            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
+            <ComboBox x:Name="cbWeight" Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
                 <ComboBoxItem Content="Tömeg" IsSelected="True" Visibility="Collapsed"/>
                 <ComboBoxItem Content="30-45kg" Selected="ComboBoxItem_Selected"/>
                 <ComboBoxItem Content="45-60kg" Selected="ComboBoxItem_Selected"/>
@@ -48,7 +48,7 @@
                 <ComboBoxItem Content="105-120kg" Selected="ComboBoxItem_Selected"/>
                 <ComboBoxItem Content="Caterpillar 795F AC" Selected="ComboBoxItem_Selected"/>
             </ComboBox>
-            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
+            <ComboBox x:Name="cbHeight" Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
                 <ComboBoxItem Content="Kivitel" IsSelected="True" Visibility="Collapsed"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBox Text="" Width="75" TextAlignment="Center"/>
@@ -58,9 +58,9 @@
                     <Label Content="[cm]" Margin="30,0,0,0"/>
                 </StackPanel>
             </ComboBox>
-            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
+            <ComboBox x:Name="cbModel" Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
                 <ComboBoxItem Content="Modell" IsSelected="True" Visibility="Collapsed"/>
-                <Slider Name="picker" Width="398" Height="55" VerticalAlignment="Center">
+                <Slider Name="picker" Width="398" Height="55" VerticalAlignment="Center" ValueChanged="picker_ValueChanged">
                     <Slider.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                             <LinearGradientBrush.GradientStops>
@@ -73,7 +73,7 @@
                     </Slider.Background>
                 </Slider>
             </ComboBox>
-            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
+            <ComboBox x:Name="cbLimbs" Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
                 <ComboBoxItem Content="Ajtók száma" IsSelected="True" Visibility="Collapsed"/>
                 <StackPanel Margin="50,0,0,0" Orientation="Horizontal">
                     <Button x:Name="minusButton" Content="-" Width="40" Height="40" Margin="0,0,30,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="minusButton_Click"/>
@@ -84,9 +84,9 @@
             <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
                 <ComboBoxItem Content="Évjárat" IsSelected="True" Visibility="Collapsed"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBox Text="" Width="100" TextAlignment="Center"/>
+                    <TextBox x:Name="yearFrom" Text="" Width="100" TextAlignment="Center"/>
                     <Label Content="-tól"></Label>
-                    <TextBox Text="" Width="100" TextAlignment="Center"/>
+                    <TextBox x:Name="yearTo" Text="" Width="100" TextAlignment="Center"/>
                     <Label Content="-ig"/>
                 </StackPanel>
             </ComboBox>

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -22,13 +24,72 @@ namespace home_page
             InitializeComponent();
             personDataWrite();
         }
-        private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        //private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        //{
+            
+        //}
+        string modelPickerRGBColor = "";
+        private void picker_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            // a cséndzsid nem volt jó, hát ez lesz
+            // RGB kódban kéne visszaadnia a kiválasztott színt
         }
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
-            // itt kéne a comboboxból leszopkodnia és elküldenie az AI-nak a jellemzőket
+            List<string> data = new List<string>();
+
+            if (cbType.SelectedItem.ToString() != "Típus")
+            {
+                if (chbMale.IsChecked == true && chbFemale.IsChecked == false)
+                {
+                    data.Add("male");
+                }
+                else if (chbMale.IsChecked == false && chbFemale.IsChecked == true)
+                {
+                    data.Add("female");
+                }
+                else
+                {
+                    data.Add("any XD");
+                }
+            }
+            if (cbCondition.SelectedItem.ToString() != "Állapot")
+            {
+                data.Add(cbType.SelectedItem.ToString());
+            }
+            if (cbWeight.SelectedItem.ToString() != "Tömeg")
+            {
+                data.Add(cbType.SelectedItem.ToString());
+            }
+            if (cbHeight.SelectedItem.ToString() != "Kivitel")
+            {
+                data.Add(cbType.SelectedItem.ToString());
+            }
+            if (cbType.SelectedItem.ToString() != "Modell")
+            {
+                //data.Add(picker.);
+            }
+            if (cbType.SelectedItem.ToString() != "Ajtók száma")
+            {
+                data.Add(tbDoors.Text.ToString());
+            }
+            if (yearFrom.Text != null && yearTo.Text != null)
+            {
+                data.Add($"from {yearFrom.Text} to {yearTo.Text}");
+            }
+            if (cbType.SelectedItem.ToString() != "Típus")
+            {
+                data.Add(cbType.SelectedItem.ToString());
+            }
+            if (cbType.SelectedItem.ToString() != "Típus")
+            {
+                data.Add(cbType.SelectedItem.ToString());
+            }
+            if (cbType.SelectedItem.ToString() != "Típus")
+            {
+                data.Add(cbType.SelectedItem.ToString());
+            }
+
+            //File.WriteAllText("personData.txt", data);
         }
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
