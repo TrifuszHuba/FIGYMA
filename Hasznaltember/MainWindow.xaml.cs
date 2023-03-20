@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +16,12 @@ using System.Windows.Shapes;
 
 namespace Hasznaltember
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +29,29 @@ namespace Hasznaltember
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Majom");
+            try
+            {
+                string[] row = File.ReadAllLines(@$"Z:\_IKT\hasznaltember.hu\Hasznaltember\adatok\{tbUsername.Text}.txt");
+                for (int i = 0; i < row.Length; i++)
+                {
+                    string[] data = row[i].Split(';');
+                    Username = data[0];
+                    Email = data[1];
+                    Password = data[2];
+                }
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show("Hibás felhasználónév.");
+            }
+            if (pbPassword.Password == Password)
+            {
+                MessageBox.Show("Bejelentkeztél te Majom.");
+            }
+            else
+            {
+                MessageBox.Show("Hibás jelszó.");
+            }
         }
 
         private void btnforgotPassword_Click(object sender, RoutedEventArgs e)

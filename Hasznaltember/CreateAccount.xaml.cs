@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,37 +21,78 @@ namespace Hasznaltember
     /// </summary>
     public partial class CreateAccount : Window
     {
+        private void pbPasswordCreate_PasswordChanged(object sender, RoutedEventArgs args)
+        {
+            tblPasswordCreate.Text = "";
+            if (pbPasswordCreate.Password == "")
+            {
+                tblPasswordCreate.Text = "Jelszó";
+            }
+        }
+        private void pbPasswordCreateRepeat_PasswordChanged(object sender, RoutedEventArgs args)
+        {
+            tblPasswordCreateRepeat.Text = "";
+            if (pbPasswordCreateRepeat.Password == "")
+            {
+                tblPasswordCreateRepeat.Text = "Jelszó ismét";
+            }
+        }
         public CreateAccount()
         {
             InitializeComponent();
         }
         private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
         {
-            
-            
-            if(true/*nincs regisztrálva ilyen név(kell hozzá a kopasz)*/)
+            bool valid = true;
+            string data = "";
+            string username;
+            string email;
+            string password;
+            try
             {
-                string username = tbUsernameCreate.Text;
+                string text = File.ReadAllText(@$"Z:\_IKT\hasznaltember.hu\Hasznaltember\adatok\{tbUsernameCreate.Text}.txt");
+                valid = false;
+                MessageBox.Show("Foglalt felhasználónév.");
             }
-            else if (true/*van regisztrálva ilyen név(kell hozzá a kopasz)*/)
+            catch (Exception a)
             {
-                MessageBox.Show("Foglalt felhasználónév te Majom");
+                valid = true;
             }
-            if (tbEmailCreate.Text.Contains("@")/*&& nincs regisztrálva ilyen email(kell hozzá a kopasz)*/)
+            if (tbUsernameCreate.Text == "")
             {
-                string email = tbEmailCreate.Text;
+                MessageBox.Show("Helytelen felhasználónév.");
+                valid = false;
             }
-            else if (!tbEmailCreate.Text.Contains("@")/*|| nincs regisztrálva ilyen email(kell hozzá a kopasz)*/)
+            else if (valid)
             {
-                MessageBox.Show("Nem valós email te Majom");
+                username = $"{tbUsernameCreate.Text};";
+                data += username;
             }
-            if(tbPasswordCreate.Text == tbPasswordCreateRepeat.Text)
+            if (!tbEmailCreate.Text.Contains("@"))
             {
-                string password = tbPasswordCreate.Text;
+                MessageBox.Show("Nem valós email.");
+                valid = false;
             }
-            else if(tbPasswordCreate.Text != tbPasswordCreateRepeat.Text)
+            else if (valid)
             {
-                MessageBox.Show("Jelszó nem egyezik te Majom");
+                email = $"{tbEmailCreate.Text};";
+                data += email;
+            }
+            if (pbPasswordCreate.Password != pbPasswordCreateRepeat.Password || pbPasswordCreate.Password == "" || pbPasswordCreateRepeat.Password == "")
+            {
+                MessageBox.Show("Jelszó nem egyezik, vagy nem helyes.");
+                valid = false;
+            }
+            else if (valid)
+            {
+                password = $"{pbPasswordCreate.Password};";
+                data += password;
+            }
+            if (valid)
+            {
+                File.WriteAllText(@$"Z:\_IKT\hasznaltember.hu\Hasznaltember\adatok\{tbUsernameCreate.Text}.txt", data);
+                MessageBox.Show("Sikeres regisztráció, vadászatra fel! grrr");
+                Close();
             }
         }
     }
