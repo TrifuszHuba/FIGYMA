@@ -1,0 +1,51 @@
+@keyframes movement_one {
+
+    0%,
+    100% {
+        transform: none;
+    }
+
+    50% {
+        transform: translate(20%, 5%) rotateY(10deg) scale(1);
+    }
+}
+
+@keyframes transform {
+
+    0%,
+    100% {
+        border-radius: 33% 67% 70% 30% / 30% 40% 70% 70%;
+    }
+
+    20% {
+        border-radius: 37% 63% 51% 49% / 37% 35% 35% 63%;
+    }
+
+    40% {
+        border-radius: 36% 64% 64% 36% / 64% 48% 52% 26%;
+    }
+
+    60% {
+        border-radius: 37% 63% 51% 49% / 30% 30% 70% 73%;
+    }
+
+    80% {
+        border-radius: 40% 60% 42% 58% / 51% 51% 49% 59%;
+    }
+}
+
+body {
+    .background {
+        position: fixed;
+        width: 800px;
+        height: 800px;
+        background-image: linear-gradient(to right, #d0d8f1, #735CDD);
+        bottom: 15%;
+        left: 25%;
+        filter: blur(70px);
+        border-radius: 40% 50% 30% 40%;
+        animation:
+            transform 5s ease-in-out infinite both alternate,
+            movement_one 5s ease-in-out infinite both;
+    }
+}
