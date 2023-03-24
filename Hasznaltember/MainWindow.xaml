@@ -73,5 +73,7 @@
             </Button.Resources>
         </Button>
         <PasswordBox x:Name="pbPassword" PasswordChanged="PasswordChangedHandler" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,574,0,0" Background="#343A40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px" Opacity="0.5" BorderBrush="#343A40" Foreground="Black" BorderThickness="0"/>
+        <Label x:Name="lbUsernameError" Content="" HorizontalAlignment="Left" Margin="1136,522,0,0" VerticalAlignment="Top" Width="108" Foreground="Red"/>
+        <Label x:Name="lbPasswordError" Content="" HorizontalAlignment="Left" Margin="1141,587,0,0" VerticalAlignment="Top" Width="108" Foreground="Red"/>
     </Grid>
 </Window>

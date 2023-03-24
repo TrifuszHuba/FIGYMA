@@ -29,6 +29,9 @@ namespace Hasznaltember
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            Password = null;
+            Email = null;
+            Username = null;
             try
             {
                 string[] row = File.ReadAllLines(@$"Z:\_IKT\hasznaltember.hu\Hasznaltember\adatok\{tbUsername.Text}.txt");
@@ -39,10 +42,12 @@ namespace Hasznaltember
                     Email = data[1];
                     Password = data[2];
                 }
+                lbUsernameError.Content = "";
+                lbPasswordError.Content = "";
             }
             catch (Exception a)
             {
-                MessageBox.Show("Hibás felhasználónév.");
+                lbUsernameError.Content = "Hibás felhasználónév.";
             }
             if (pbPassword.Password == Password)
             {
@@ -50,7 +55,7 @@ namespace Hasznaltember
             }
             else
             {
-                MessageBox.Show("Hibás jelszó.");
+                lbPasswordError.Content = "Hibás jelszó.";
             }
         }
 

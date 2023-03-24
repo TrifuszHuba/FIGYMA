@@ -62,24 +62,24 @@ namespace Hasznaltember
             }
             catch (Exception a)
             {
-                MessageBox.Show("Nem regisztrált felhasználónév.");
+                lbUsernameError.Content = "Nem regisztrált felhasználónév.";
             }
             if (!tbEmail.Text.Contains("@"))
             {
-                MessageBox.Show("Nem valós email.");
+                lbEmailError.Content = "Nem valós email.";
                 valid = false;
             }
             else if(tbEmail.Text != Email)
             {
-                MessageBox.Show("Helytelen email.");
+                lbEmailError.Content = "Helytelen email.";
                 valid = false;
             }
-            if(pbNewPassword.Password != pbNewPasswordRepeat.Password || pbNewPassword.Password == null)
+            if(pbNewPassword.Password != pbNewPasswordRepeat.Password || pbNewPassword.Password == "")
             {
                 valid = false;
-                MessageBox.Show("Nem jó jelszó formátum vagy nem egyező jelszavak.");
+                lbPasswordError.Content = "Nem jó jelszó formátum vagy nem egyező jelszavak.";
             }
-            else if(pbNewPassword.Password == pbNewPasswordRepeat.Password && pbNewPassword.Password != null)
+            else if(pbNewPassword.Password == pbNewPasswordRepeat.Password && pbNewPassword.Password != "")
             {
                 Password = pbNewPassword.Password;
             }

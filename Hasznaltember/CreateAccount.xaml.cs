@@ -52,7 +52,7 @@ namespace Hasznaltember
             {
                 string text = File.ReadAllText(@$"Z:\_IKT\hasznaltember.hu\Hasznaltember\adatok\{tbUsernameCreate.Text}.txt");
                 valid = false;
-                MessageBox.Show("Foglalt felhasználónév.");
+                lbNewUsernameError.Content = "Foglalt felhasználónév.";
             }
             catch (Exception a)
             {
@@ -60,7 +60,7 @@ namespace Hasznaltember
             }
             if (tbUsernameCreate.Text == "")
             {
-                MessageBox.Show("Helytelen felhasználónév.");
+                lbNewUsernameError.Content = "Helytelen felhasználónév.";
                 valid = false;
             }
             else if (valid)
@@ -70,7 +70,7 @@ namespace Hasznaltember
             }
             if (!tbEmailCreate.Text.Contains("@"))
             {
-                MessageBox.Show("Nem valós email.");
+                lbNewEmailError.Content = "Nem valós email.";
                 valid = false;
             }
             else if (valid)
@@ -80,7 +80,7 @@ namespace Hasznaltember
             }
             if (pbPasswordCreate.Password != pbPasswordCreateRepeat.Password || pbPasswordCreate.Password == "" || pbPasswordCreateRepeat.Password == "")
             {
-                MessageBox.Show("Jelszó nem egyezik, vagy nem helyes.");
+                lbNewPasswordError.Content = "Jelszó nem egyezik, vagy nem helyes.";
                 valid = false;
             }
             else if (valid)
