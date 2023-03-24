@@ -24,15 +24,31 @@ namespace home_page
             InitializeComponent();
             personDataWrite();
         }
-        //private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
-        //{
-            
-        //}
-        string modelPickerRGBColor = "";
-        private void picker_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        
+        string modelPickerColor = "";
+        private void picker_DragCompleted(object sender, DragCompletedEventArgs e)
         {
-            // RGB kódban kéne visszaadnia a kiválasztott színt
+            Slider slider = sender as Slider;
+            int value = (int)slider.Value;
+            if (value <= 25)
+            {
+                modelPickerColor = "white";
+            }
+            else if (value <= 50)
+            {
+                modelPickerColor = "Asian";
+            }
+            else if (value <= 75)
+            {
+                modelPickerColor = "Latino";
+            }
+            else
+            {
+                modelPickerColor = "black";
+            }
+            MessageBox.Show(modelPickerColor);
         }
+ 
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
             List<string> data = new List<string>();
@@ -49,7 +65,7 @@ namespace home_page
                 }
                 else
                 {
-                    data.Add("any XD");
+                    data.Add("no straight gender");
                 }
             }
             if (cbCondition.SelectedItem.ToString() != "Állapot")
@@ -58,7 +74,15 @@ namespace home_page
             }
             if (cbWeight.SelectedItem.ToString() != "Tömeg")
             {
-                data.Add(cbType.SelectedItem.ToString());
+                
+
+
+
+
+
+
+
+
             }
             if (cbHeight.SelectedItem.ToString() != "Kivitel")
             {
@@ -66,7 +90,7 @@ namespace home_page
             }
             if (cbType.SelectedItem.ToString() != "Modell")
             {
-                //data.Add(picker.);
+                data.Add(modelPickerColor);
             }
             if (cbType.SelectedItem.ToString() != "Ajtók száma")
             {

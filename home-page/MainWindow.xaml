@@ -30,23 +30,23 @@
             </ComboBox>
             <ComboBox x:Name="cbCondition"  Width="398" Height="55" Margin="0,10,0,15"  Background="#ADB5BD">
                 <ComboBoxItem Content="Állapot" IsSelected="True" Visibility="Collapsed" />
-                <ComboBoxItem Content="Kitűnő" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Újszerű" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Megkímélt" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Sérülésmentes" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Sérült" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Kitűnő"/>
+                <ComboBoxItem Content="Újszerű"/>
+                <ComboBoxItem Content="Megkímélt"/>
+                <ComboBoxItem Content="Sérülésmentes"/>
+                <ComboBoxItem Content="Sérült"/>
             </ComboBox>
             <ComboBox x:Name="cbWeight" Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
                 <ComboBoxItem Content="Tömeg" IsSelected="True" Visibility="Collapsed"/>
-                <ComboBoxItem Content="30-45kg" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="45-60kg" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="60-75kg" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="75-90kg" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="90-105kg" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="105-120kg" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="120-135kg" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="105-120kg" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Caterpillar 795F AC" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="30-45kg"/>
+                <ComboBoxItem Content="45-60kg"/>
+                <ComboBoxItem Content="60-75kg"/>
+                <ComboBoxItem Content="75-90kg"/>
+                <ComboBoxItem Content="90-105kg"/>
+                <ComboBoxItem Content="105-120kg"/>
+                <ComboBoxItem Content="120-135kg"/>
+                <ComboBoxItem Content="105-120kg"/>
+                <ComboBoxItem Content="Caterpillar 795F AC"/>
             </ComboBox>
             <ComboBox x:Name="cbHeight" Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
                 <ComboBoxItem Content="Kivitel" IsSelected="True" Visibility="Collapsed"/>
@@ -60,7 +60,7 @@
             </ComboBox>
             <ComboBox x:Name="cbModel" Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
                 <ComboBoxItem Content="Modell" IsSelected="True" Visibility="Collapsed"/>
-                <Slider Name="picker" Width="398" Height="55" VerticalAlignment="Center" ValueChanged="picker_ValueChanged">
+                <Slider Name="picker" Width="398" Height="55" Minimum="0" Maximum="100" Thumb.DragCompleted="picker_DragCompleted" VerticalAlignment="Center">
                     <Slider.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                             <LinearGradientBrush.GradientStops>
@@ -116,31 +116,31 @@
             </ComboBox>
             <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
                 <ComboBoxItem Content="Okmányok" IsSelected="True" Visibility="Collapsed"/>
-                <ComboBoxItem Content="Magyar" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Külföldi" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Magyar"/>
+                <ComboBoxItem Content="Külföldi"/>
             </ComboBox>
             <ComboBox Width="398" Height="55" Margin="0,0,0,20" Background="#ADB5BD">
                 <ComboBoxItem Content="Földrajzi hely" IsSelected="True" Visibility="Collapsed"/>
-                <ComboBoxItem Content="Bács-Kiskun vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Baranya vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Békés vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Borsod Abaúj-Zemplén vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Csongrád-Csanád vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Fejér vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Győr-Moson-Sopron vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Hajdú-Bihar vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Heves vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Jász-nagykun-Szolnok vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Komárom-Esztergom vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Nógrád vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Pest vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Somogy vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Szabolcs-Szatmár-Bereg vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Tolna vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Vas vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Veszprém vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Zala vármegye" Selected="ComboBoxItem_Selected"/>
-                <ComboBoxItem Content="Tét (Bajusz Királyság)" Selected="ComboBoxItem_Selected"/>
+                <ComboBoxItem Content="Bács-Kiskun vármegye"/>
+                <ComboBoxItem Content="Baranya vármegye"/>
+                <ComboBoxItem Content="Békés vármegye"/>
+                <ComboBoxItem Content="Borsod Abaúj-Zemplén vármegye"/>
+                <ComboBoxItem Content="Csongrád-Csanád vármegye"/>
+                <ComboBoxItem Content="Fejér vármegye"/>
+                <ComboBoxItem Content="Győr-Moson-Sopron vármegye"/>
+                <ComboBoxItem Content="Hajdú-Bihar vármegye"/>
+                <ComboBoxItem Content="Heves vármegye"/>
+                <ComboBoxItem Content="Jász-nagykun-Szolnok vármegye"/>
+                <ComboBoxItem Content="Komárom-Esztergom vármegye"/>
+                <ComboBoxItem Content="Nógrád vármegye"/>
+                <ComboBoxItem Content="Pest vármegye"/>
+                <ComboBoxItem Content="Somogy vármegye"/>
+                <ComboBoxItem Content="Szabolcs-Szatmár-Bereg vármegye"/>
+                <ComboBoxItem Content="Tolna vármegye"/>
+                <ComboBoxItem Content="Vas vármegye"/>
+                <ComboBoxItem Content="Veszprém vármegye"/>
+                <ComboBoxItem Content="Zala vármegye"/>
+                <ComboBoxItem Content="Tét (Bajusz Királyság)"/>
             </ComboBox>
             <Button x:Name="searchButton" Content="Keresés" Width="380" Height="70" Margin="0,110" Click="searchButton_Click">
                 <Button.Resources>
