@@ -60,7 +60,7 @@ namespace Hasznaltember
             }
             if (tbUsernameCreate.Text == "")
             {
-                lbNewUsernameError.Content = "Helytelen felhasználónév.";
+                lbNewUsernameError.Content = "Helytelen felhasználónév";
                 valid = false;
             }
             else if (valid)
@@ -70,7 +70,7 @@ namespace Hasznaltember
             }
             if (!tbEmailCreate.Text.Contains("@"))
             {
-                lbNewEmailError.Content = "Nem valós email.";
+                lbNewEmailError.Content = "Nem valós email";
                 valid = false;
             }
             else if (valid)
@@ -80,7 +80,7 @@ namespace Hasznaltember
             }
             if (pbPasswordCreate.Password != pbPasswordCreateRepeat.Password || pbPasswordCreate.Password == "" || pbPasswordCreateRepeat.Password == "")
             {
-                lbNewPasswordError.Content = "Jelszó nem egyezik, vagy nem helyes.";
+                lbNewPasswordError.Content = "Jelszó nem egyezik, vagy nem helyes";
                 valid = false;
             }
             else if (valid)

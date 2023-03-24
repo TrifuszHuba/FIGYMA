@@ -47,15 +47,15 @@ namespace Hasznaltember
             }
             catch (Exception a)
             {
-                lbUsernameError.Content = "Hibás felhasználónév.";
+                lbUsernameError.Content = "Hibás felhasználónév";
             }
             if (pbPassword.Password == Password)
             {
-                MessageBox.Show("Bejelentkeztél te Majom.");
+                MessageBox.Show("Bejelentkeztél te Majom");
             }
             else
             {
-                lbPasswordError.Content = "Hibás jelszó.";
+                lbPasswordError.Content = "Hibás jelszó";
             }
         }
 
