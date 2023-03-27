@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -44,6 +45,37 @@ namespace home_page
                 }
             }
         }
+
+        private void buttonCondition_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+
+        }
+        int weight;
+        private void buttonWeight_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            if (b.Content.ToString() != "Caterpillar 795F AC")
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append(b.Content);
+                sb.Remove(sb.Length - 2, 2);
+                string weightrange = sb.ToString();
+                string[] w = weightrange.Split("-");
+                int weight1 = int.Parse(w[0]);
+                int weight2 = int.Parse(w[1]);
+                weight = (weight1 + weight2) / 2;
+            }
+        }
+        int height;
+        private void getHeight()
+        {
+            if ()
+            {
+
+            }
+        }
+
         string modelPickerColor = "";
         private void picker_DragCompleted(object sender, DragCompletedEventArgs e)
         {
@@ -86,6 +118,10 @@ namespace home_page
             {
                 data.Add("human");
             }
+
+
+            //data.Add();
+
 
             foreach (var item in data)
             {

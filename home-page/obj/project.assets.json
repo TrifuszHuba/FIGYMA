@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\11. évf._2022-2023\\Javascript&IKT\\2023.02.17-04.21 - Hasznaltember.hu\\home-page\\home-page.csproj",
+      "projectUniqueName": "Z:\\11. évf._2022-2023\\Javascript&IKT\\2023.02.17-04.21 - Hasznaltember.hu\\hasznaltember.hu\\home-page\\home-page.csproj",
       "projectName": "home-page",
-      "projectPath": "Z:\\11. évf._2022-2023\\Javascript&IKT\\2023.02.17-04.21 - Hasznaltember.hu\\home-page\\home-page.csproj",
+      "projectPath": "Z:\\11. évf._2022-2023\\Javascript&IKT\\2023.02.17-04.21 - Hasznaltember.hu\\hasznaltember.hu\\home-page\\home-page.csproj",
       "packagesPath": "C:\\Users\\varga.mate.gellert\\.nuget\\packages\\",
-      "outputPath": "Z:\\11. évf._2022-2023\\Javascript&IKT\\2023.02.17-04.21 - Hasznaltember.hu\\home-page\\obj\\",
+      "outputPath": "Z:\\11. évf._2022-2023\\Javascript&IKT\\2023.02.17-04.21 - Hasznaltember.hu\\hasznaltember.hu\\home-page\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -70,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
