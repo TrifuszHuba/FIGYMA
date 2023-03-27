@@ -22,9 +22,28 @@ namespace home_page
         public MainWindow()
         {
             InitializeComponent();
-            personDataWrite();
+            personDataWrite();  
         }
         
+        private void btnDropdown_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            StackPanel parent = (StackPanel)b.Parent;
+            if (parent.Children[1].Visibility != Visibility.Visible)
+            {
+                for (int i = 1; i < parent.Children.Count; i++)
+                {
+                    parent.Children[i].Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                for (int i = 1; i < parent.Children.Count; i++)
+                {
+                    parent.Children[i].Visibility = Visibility.Collapsed;
+                }
+            }
+        }
         string modelPickerColor = "";
         private void picker_DragCompleted(object sender, DragCompletedEventArgs e)
         {
@@ -46,74 +65,33 @@ namespace home_page
             {
                 modelPickerColor = "black";
             }
-            MessageBox.Show(modelPickerColor);
         }
- 
+
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
             List<string> data = new List<string>();
 
-            if (cbType.SelectedItem.ToString() != "Típus")
+            if (chbMale.IsChecked == true && chbFemale.IsChecked == false)
             {
-                if (chbMale.IsChecked == true && chbFemale.IsChecked == false)
-                {
-                    data.Add("male");
-                }
-                else if (chbMale.IsChecked == false && chbFemale.IsChecked == true)
-                {
-                    data.Add("female");
-                }
-                else
-                {
-                    data.Add("no straight gender");
-                }
+                data.Add("man");
             }
-            if (cbCondition.SelectedItem.ToString() != "Állapot")
-            {
-                data.Add(cbType.SelectedItem.ToString());
+            else if (chbMale.IsChecked == false && chbFemale.IsChecked == true) {
+                data.Add("woman");
             }
-            if (cbWeight.SelectedItem.ToString() != "Tömeg")
+            else if (chbMale.IsChecked == true && chbFemale.IsChecked == true) 
             {
-                
-
-
-
-
-
-
-
-
+                data.Add("transgender person");
             }
-            if (cbHeight.SelectedItem.ToString() != "Kivitel")
+            else
             {
-                data.Add(cbType.SelectedItem.ToString());
-            }
-            if (cbType.SelectedItem.ToString() != "Modell")
-            {
-                data.Add(modelPickerColor);
-            }
-            if (cbType.SelectedItem.ToString() != "Ajtók száma")
-            {
-                data.Add(tbDoors.Text.ToString());
-            }
-            if (yearFrom.Text != null && yearTo.Text != null)
-            {
-                data.Add($"from {yearFrom.Text} to {yearTo.Text}");
-            }
-            if (cbType.SelectedItem.ToString() != "Típus")
-            {
-                data.Add(cbType.SelectedItem.ToString());
-            }
-            if (cbType.SelectedItem.ToString() != "Típus")
-            {
-                data.Add(cbType.SelectedItem.ToString());
-            }
-            if (cbType.SelectedItem.ToString() != "Típus")
-            {
-                data.Add(cbType.SelectedItem.ToString());
+                data.Add("human");
             }
 
-            //File.WriteAllText("personData.txt", data);
+            foreach (var item in data)
+            {
+                File.WriteAllText("personData.txt", item + ";");
+
+            }
         }
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -125,7 +103,7 @@ namespace home_page
         {
             int doorsNum = int.Parse(tbDoors.Text);
 
-            if (doorsNum > -1)
+            if (doorsNum > 0)
             {
                 doorsNum--;
                 tbDoors.Text = doorsNum.ToString();
@@ -147,10 +125,6 @@ namespace home_page
                 tbDoors.Text = doorsNum.ToString();
             }
         }
-
-
-        // options: alap: Típus
-        //  kiválasztott: Típus: Férfi
 
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {

@@ -14,142 +14,159 @@
             <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Width="400" Height="1080" Background="#DEE2E6">
-            <ComboBox x:Name="cbType"  Width="398" Height="55" Margin="0,10,0,15"  Background="#ADB5BD">
-                <ComboBoxItem Content="Típus" IsSelected="True" Visibility="Collapsed"/>
-                <CheckBox x:Name="chbMale" Content="Férfi" FontSize="13" Width="155">
-                    <CheckBox.LayoutTransform>
-                        <ScaleTransform ScaleX="2.5" ScaleY="2.5"/>
-                    </CheckBox.LayoutTransform>
-                </CheckBox>
-                <CheckBox x:Name="chbFemale" Content="Nő" FontSize="13" Width="155">
-                    <CheckBox.LayoutTransform>
-                        <ScaleTransform ScaleX="2.5" ScaleY="2.5"/>
-                    </CheckBox.LayoutTransform>
-                </CheckBox>
-            </ComboBox>
-            <ComboBox x:Name="cbCondition"  Width="398" Height="55" Margin="0,10,0,15"  Background="#ADB5BD">
-                <ComboBoxItem Content="Állapot" IsSelected="True" Visibility="Collapsed" />
-                <ComboBoxItem Content="Kitűnő"/>
-                <ComboBoxItem Content="Újszerű"/>
-                <ComboBoxItem Content="Megkímélt"/>
-                <ComboBoxItem Content="Sérülésmentes"/>
-                <ComboBoxItem Content="Sérült"/>
-            </ComboBox>
-            <ComboBox x:Name="cbWeight" Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
-                <ComboBoxItem Content="Tömeg" IsSelected="True" Visibility="Collapsed"/>
-                <ComboBoxItem Content="30-45kg"/>
-                <ComboBoxItem Content="45-60kg"/>
-                <ComboBoxItem Content="60-75kg"/>
-                <ComboBoxItem Content="75-90kg"/>
-                <ComboBoxItem Content="90-105kg"/>
-                <ComboBoxItem Content="105-120kg"/>
-                <ComboBoxItem Content="120-135kg"/>
-                <ComboBoxItem Content="105-120kg"/>
-                <ComboBoxItem Content="Caterpillar 795F AC"/>
-            </ComboBox>
-            <ComboBox x:Name="cbHeight" Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
-                <ComboBoxItem Content="Kivitel" IsSelected="True" Visibility="Collapsed"/>
-                <StackPanel Orientation="Horizontal">
-                    <TextBox Text="" Width="75" TextAlignment="Center"/>
-                    <Label Content="-tól"></Label>
-                     <TextBox Text="" Width="75" TextAlignment="Center"/>
-                    <Label Content="-ig"/>
-                    <Label Content="[cm]" Margin="30,0,0,0"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Width="400" Height="1080">
+            <StackPanel x:Name="spOptions" Background="#DEE2E6">
+                <!--<ComboBox x:Name="cbType"  Width="398" Height="55" Margin="0,10,0,15"  Background="#ADB5BD">
+                <ComboBoxItem Content="Típus" IsSelected="True" Visibility="Collapsed"/>-->
+                <StackPanel>
+                    <Button x:Name="btnDropdownType" Content="Típus" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
+                    <CheckBox x:Name="chbMale" Visibility="Collapsed" Content="Férfi" FontSize="13" Width="155">
+                        <CheckBox.LayoutTransform>
+                            <ScaleTransform ScaleX="2.5" ScaleY="2.5"/>
+                        </CheckBox.LayoutTransform>
+                    </CheckBox>
+                    <CheckBox x:Name="chbFemale" Visibility="Collapsed" Content="Nő" FontSize="13" Width="155">
+                        <CheckBox.LayoutTransform>
+                            <ScaleTransform ScaleX="2.5" ScaleY="2.5"/>
+                        </CheckBox.LayoutTransform>
+                    </CheckBox>
                 </StackPanel>
-            </ComboBox>
-            <ComboBox x:Name="cbModel" Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
-                <ComboBoxItem Content="Modell" IsSelected="True" Visibility="Collapsed"/>
-                <Slider Name="picker" Width="398" Height="55" Minimum="0" Maximum="100" Thumb.DragCompleted="picker_DragCompleted" VerticalAlignment="Center">
-                    <Slider.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <LinearGradientBrush.GradientStops>
-                                <GradientStop Color="White" Offset="0" />
-                                <GradientStop Color="DarkOrange" Offset="0.5" />
-                                <GradientStop Color="Brown" Offset="0.75" />
-                                <GradientStop Color="Black" Offset="1" />
-                            </LinearGradientBrush.GradientStops>
-                        </LinearGradientBrush>
-                    </Slider.Background>
-                </Slider>
-            </ComboBox>
-            <ComboBox x:Name="cbLimbs" Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
-                <ComboBoxItem Content="Ajtók száma" IsSelected="True" Visibility="Collapsed"/>
-                <StackPanel Margin="50,0,0,0" Orientation="Horizontal">
-                    <Button x:Name="minusButton" Content="-" Width="40" Height="40" Margin="0,0,30,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="minusButton_Click"/>
-                    <TextBox x:Name="tbDoors" Width="55" Height="55" Margin="0,0,30,0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="4" IsEnabled="False"/>
-                    <Button x:Name="plusButton" Content="+" Width="40" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="plusButton_Click"/>
+
+                <StackPanel>
+                    <Button x:Name="btnDropdownCondition" Content="Állapot" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
+                    <Button Content="Kitűnő" Visibility="Collapsed"/>
+                    <Button Content="Újszerű" Visibility="Collapsed"/>
+                    <Button Content="Megkímélt" Visibility="Collapsed"/>
+                    <Button Content="Sérülésmentes" Visibility="Collapsed"/>
+                    <Button Content="Sérült" Visibility="Collapsed"/>
                 </StackPanel>
-            </ComboBox>
-            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
-                <ComboBoxItem Content="Évjárat" IsSelected="True" Visibility="Collapsed"/>
-                <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="yearFrom" Text="" Width="100" TextAlignment="Center"/>
-                    <Label Content="-tól"></Label>
-                    <TextBox x:Name="yearTo" Text="" Width="100" TextAlignment="Center"/>
-                    <Label Content="-ig"/>
+
+                <StackPanel>
+                    <Button x:Name="btnDropdownWeight" Content="Tömeg" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
+                    <Button Content="30-45kg" Visibility="Collapsed"/>
+                    <Button Content="45-60kg" Visibility="Collapsed"/>
+                    <Button Content="60-75kg" Visibility="Collapsed"/>
+                    <Button Content="75-90kg" Visibility="Collapsed"/>
+                    <Button Content="90-105kg" Visibility="Collapsed"/>
+                    <Button Content="105-120kg" Visibility="Collapsed"/>
+                    <Button Content="120-135kg" Visibility="Collapsed"/>
+                    <Button Content="105-120kg" Visibility="Collapsed"/>
+                    <Button Content="Caterpillar 795F AC" Visibility="Collapsed"/>
                 </StackPanel>
-            </ComboBox>
-            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
-                <ComboBoxItem Content="Ellenőrizhető előélet" IsSelected="True" Visibility="Collapsed"/>
-                <ComboBoxItem Content="Igen"/>
-                    <ComboBoxItem Content="Nem"/>
-            </ComboBox>
-            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
-                <ComboBoxItem Content="Tető szín" IsSelected="True" Visibility="Collapsed"/>
-                <Slider Name="pickerHair" Width="398" Height="55" VerticalAlignment="Center">
-                    <Slider.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <LinearGradientBrush.GradientStops>
-                                <GradientStop Color="White" Offset="0" />
-                                <GradientStop Color="red" Offset="0.1428571428571429" />
-                                <GradientStop Color="orange" Offset="0.2857142857142858" />
-                                <GradientStop Color="yellow" Offset="0.4285714285714287" />
-                                <GradientStop Color="green" Offset="0.5714285714285716" />
-                                <GradientStop Color="blue" Offset="0.7142857142857145" />
-                                <GradientStop Color="violet" Offset="0.8571428571428574" />
-                                <GradientStop Color="Black" Offset="1" />
-                            </LinearGradientBrush.GradientStops>
-                        </LinearGradientBrush>
-                    </Slider.Background>
-                </Slider>
-            </ComboBox>
-            <ComboBox Width="398" Height="55" Margin="0,0,0,15" Background="#ADB5BD">
-                <ComboBoxItem Content="Okmányok" IsSelected="True" Visibility="Collapsed"/>
-                <ComboBoxItem Content="Magyar"/>
-                <ComboBoxItem Content="Külföldi"/>
-            </ComboBox>
-            <ComboBox Width="398" Height="55" Margin="0,0,0,20" Background="#ADB5BD">
-                <ComboBoxItem Content="Földrajzi hely" IsSelected="True" Visibility="Collapsed"/>
-                <ComboBoxItem Content="Bács-Kiskun vármegye"/>
-                <ComboBoxItem Content="Baranya vármegye"/>
-                <ComboBoxItem Content="Békés vármegye"/>
-                <ComboBoxItem Content="Borsod Abaúj-Zemplén vármegye"/>
-                <ComboBoxItem Content="Csongrád-Csanád vármegye"/>
-                <ComboBoxItem Content="Fejér vármegye"/>
-                <ComboBoxItem Content="Győr-Moson-Sopron vármegye"/>
-                <ComboBoxItem Content="Hajdú-Bihar vármegye"/>
-                <ComboBoxItem Content="Heves vármegye"/>
-                <ComboBoxItem Content="Jász-nagykun-Szolnok vármegye"/>
-                <ComboBoxItem Content="Komárom-Esztergom vármegye"/>
-                <ComboBoxItem Content="Nógrád vármegye"/>
-                <ComboBoxItem Content="Pest vármegye"/>
-                <ComboBoxItem Content="Somogy vármegye"/>
-                <ComboBoxItem Content="Szabolcs-Szatmár-Bereg vármegye"/>
-                <ComboBoxItem Content="Tolna vármegye"/>
-                <ComboBoxItem Content="Vas vármegye"/>
-                <ComboBoxItem Content="Veszprém vármegye"/>
-                <ComboBoxItem Content="Zala vármegye"/>
-                <ComboBoxItem Content="Tét (Bajusz Királyság)"/>
-            </ComboBox>
-            <Button x:Name="searchButton" Content="Keresés" Width="380" Height="70" Margin="0,110" Click="searchButton_Click">
+
+                <StackPanel>
+                    <Button x:Name="btnDropdownHeight" Content="Kivitel" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
+                    <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                        <TextBox Text="" Width="75" TextAlignment="Center"/>
+                        <Label Content="-tól"></Label>
+                        <TextBox Text="" Width="75" TextAlignment="Center"/>
+                        <Label Content="-ig"/>
+                        <Label Content="[cm]" Margin="30,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel>
+                    <Button x:Name="btnDropdownRace" Content="Modell" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
+                    <Slider Name="picker" Visibility="Collapsed" Width="398" Height="55" Minimum="0" Maximum="100" Thumb.DragCompleted="picker_DragCompleted" VerticalAlignment="Center">
+                        <Slider.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="DarkOrange" Offset="0.5" />
+                                    <GradientStop Color="Brown" Offset="0.75" />
+                                    <GradientStop Color="Black" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Slider.Background>
+                    </Slider>
+                </StackPanel>
+
+                <StackPanel>
+                    <Button x:Name="btnDropdownLimbs" Content="Ajtók száma" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
+                    <StackPanel Margin="50,0,0,0" Orientation="Horizontal" Visibility="Collapsed">
+                        <Button x:Name="minusButton" Content="-" Width="40" Height="40" Margin="0,0,30,0" Click="minusButton_Click"/>
+                        <TextBox x:Name="tbDoors" Width="55" Height="55" Margin="0,0,30,0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="4" IsEnabled="False"/>
+                        <Button x:Name="plusButton" Content="+" Width="40" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="plusButton_Click"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel>
+                    <Button x:Name="btnDropdownYear" Content="Évjárat" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
+                    <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                        <TextBox x:Name="yearFrom" Text="" Width="100" TextAlignment="Center"/>
+                        <Label Content="-tól"></Label>
+                        <TextBox x:Name="yearTo" Text="" Width="100" TextAlignment="Center"/>
+                        <Label Content="-ig"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel>
+                    <Button x:Name="btnDropdownBackground" Content="Ellenőrizhető előélet" Width="398" Height="55" FontWeight="Bold" Margin="0,10,0,15" Click="btnDropdown_Click"/>
+                    <Button Content="Igen" Visibility="Collapsed"/>
+                    <Button Content="Nem" Visibility="Collapsed"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <Button x:Name="btnDropdownHair" Content="Tető szín" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
+                    <Slider Name="pickerHair" Visibility="Collapsed" Width="398" Height="55" VerticalAlignment="Center">
+                        <Slider.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="red" Offset="0.1428571428571429" />
+                                    <GradientStop Color="orange" Offset="0.2857142857142858" />
+                                    <GradientStop Color="yellow" Offset="0.4285714285714287" />
+                                    <GradientStop Color="green" Offset="0.5714285714285716" />
+                                    <GradientStop Color="blue" Offset="0.7142857142857145" />
+                                    <GradientStop Color="violet" Offset="0.8571428571428574" />
+                                    <GradientStop Color="Black" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Slider.Background>
+                    </Slider>
+                </StackPanel>
+
+                <StackPanel>
+                    <Button x:Name="btnDropdownPapers" Content="Okmányok" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
+                    <Button Content="Magyar" Visibility="Collapsed"/>
+                    <Button Content="Külföldi" Visibility="Collapsed"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <Button x:Name="btnDropdownLocation" Content="Földrajzi hely" FontWeight="Bold" Width="398" Height="55" Margin="0,10,0,15" Click="btnDropdown_Click"/>
+                    <Button Visibility="Collapsed" Content="Bács-Kiskun vármegye"/>
+                    <Button Visibility="Collapsed" Content="Baranya vármegye"/>
+                    <Button Visibility="Collapsed" Content="Békés vármegye"/>
+                    <Button Visibility="Collapsed" Content="Borsod Abaúj-Zemplén vármegye"/>
+                    <Button Visibility="Collapsed" Content="Csongrád-Csanád vármegye"/>
+                    <Button Visibility="Collapsed" Content="Fejér vármegye"/>
+                    <Button Visibility="Collapsed" Content="Győr-Moson-Sopron vármegye"/>
+                    <Button Visibility="Collapsed" Content="Hajdú-Bihar vármegye"/>
+                    <Button Visibility="Collapsed" Content="Heves vármegye"/>
+                    <Button Visibility="Collapsed" Content="Jász-nagykun-Szolnok vármegye"/>
+                    <Button Visibility="Collapsed" Content="Komárom-Esztergom vármegye"/>
+                    <Button Visibility="Collapsed" Content="Nógrád vármegye"/>
+                    <Button Visibility="Collapsed" Content="Pest vármegye"/>
+                    <Button Visibility="Collapsed" Content="Somogy vármegye"/>
+                    <Button Visibility="Collapsed" Content="Szabolcs-Szatmár-Bereg vármegye"/>
+                    <Button Visibility="Collapsed" Content="Tolna vármegye"/>
+                    <Button Visibility="Collapsed" Content="Vas vármegye"/>
+                    <Button Visibility="Collapsed" Content="Veszprém vármegye"/>
+                    <Button Visibility="Collapsed" Content="Zala vármegye"/>
+                    <Button Visibility="Collapsed" Content="Tét (Bajusz Királyság)"/>
+                </StackPanel>
+
+                <Button x:Name="searchButton" Content="Keresés" Width="380" Height="70" Margin="0,110" Click="searchButton_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="15"/>
                     </Style>
                 </Button.Resources>
             </Button>
-        </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+
         <Image x:Name="mainPicture" Grid.Column="1" HorizontalAlignment="Left" Height="800" Width="550" Margin="170,64,0,266" Source="/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" Stretch="UniformToFill"/>
         <Image Grid.Column="1" HorizontalAlignment="Left" Height="120" Margin="170,912,0,0" VerticalAlignment="Top" Width="120" Source="/samoyed.jpg" Stretch="UniformToFill" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
         <Image Grid.Column="1" HorizontalAlignment="Left" Height="120" Margin="311,912,0,0" VerticalAlignment="Top" Width="120" Source="/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" Stretch="UniformToFill" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
