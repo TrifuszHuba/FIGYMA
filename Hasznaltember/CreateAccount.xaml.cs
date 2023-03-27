@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -48,7 +49,17 @@ namespace Hasznaltember
             string username;
             string email;
             string password;
-            try
+            string lowercase = pbPasswordCreate.Password.ToLower();
+            string[] specialChar = {"@","&","#","<",">","{","}","?",",",";",".","-","*","_","|","$","[","]","'","+","~","ˇ","^","!","˘","%","°","/","˛","=","`","(",")","˙","´","˝","¨","¸"};
+            bool contains = false;
+            foreach (string a in specialChar)
+            {
+                if (pbPasswordCreate.Password.Contains(a))
+                {
+                    contains = true;
+                }
+            }
+                try
             {
                 string text = File.ReadAllText(@$"Z:\_IKT\hasznaltember.hu\Hasznaltember\adatok\{tbUsernameCreate.Text}.txt");
                 valid = false;
@@ -83,9 +94,16 @@ namespace Hasznaltember
                 lbNewPasswordError.Content = "Jelszó nem egyezik, vagy nem helyes";
                 valid = false;
             }
+            else if (pbPasswordCreate.Password == lowercase || !contains)
+            {
+                valid = false;
+                lbNewPasswordError.Content = "A jelszónak tartalmaznia kell legalább egy nagyvetűt és egy különleges karaktert";
+            }
             else if (valid)
             {
-                password = $"{pbPasswordCreate.Password};";
+                Random rnd = new Random();
+                int num = rnd.Next(10);
+                password = $"{pbPasswordCreate.Password}§{rnd}ne{rnd}lopd{rnd}a jelszót, a kurva anyád{rnd};";
                 data += password;
             }
             if (valid)

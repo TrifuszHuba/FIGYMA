@@ -21,6 +21,7 @@ namespace Hasznaltember
         public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Asd { get; set; }
 
         public MainWindow()
         {
@@ -32,6 +33,7 @@ namespace Hasznaltember
             Password = null;
             Email = null;
             Username = null;
+            Asd = null;
             try
             {
                 string[] row = File.ReadAllLines(@$"Z:\_IKT\hasznaltember.hu\Hasznaltember\adatok\{tbUsername.Text}.txt");
@@ -40,7 +42,7 @@ namespace Hasznaltember
                     string[] data = row[i].Split(';');
                     Username = data[0];
                     Email = data[1];
-                    Password = data[2];
+                    Asd = data[2];
                 }
                 lbUsernameError.Content = "";
                 lbPasswordError.Content = "";
@@ -49,6 +51,8 @@ namespace Hasznaltember
             {
                 lbUsernameError.Content = "Hibás felhasználónév";
             }
+            string[] password = Asd.Split("§");
+            Password = password[0];
             if (pbPassword.Password == Password)
             {
                 MessageBox.Show("Bejelentkeztél te Majom");

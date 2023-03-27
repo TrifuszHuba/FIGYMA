@@ -25,6 +25,7 @@ namespace Hasznaltember
         public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Asd { get; set; }
         public ResetPassword()
         {
             InitializeComponent();
@@ -81,7 +82,9 @@ namespace Hasznaltember
             }
             else if(pbNewPassword.Password == pbNewPasswordRepeat.Password && pbNewPassword.Password != "")
             {
-                Password = pbNewPassword.Password;
+                Random rnd = new Random();
+                int num = rnd.Next(10);
+                Password = $"{pbNewPassword.Password}§{rnd}ne{rnd}lopd{rnd}a jelszót, a kurva anyád{rnd};";
             }
             if (valid)
             {
