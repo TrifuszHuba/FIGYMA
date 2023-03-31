@@ -16,8 +16,6 @@
         </Grid.ColumnDefinitions>
         <ScrollViewer VerticalScrollBarVisibility="Auto" Width="400" Height="1080">
             <StackPanel x:Name="spOptions" Background="#DEE2E6">
-                <!--<ComboBox x:Name="cbType"  Width="398" Height="55" Margin="0,10,0,15"  Background="#ADB5BD">
-                <ComboBoxItem Content="Típus" IsSelected="True" Visibility="Collapsed"/>-->
                 <StackPanel>
                     <Button x:Name="btnDropdownType" Content="Típus" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
                     <CheckBox x:Name="chbMale" Visibility="Collapsed" Content="Férfi" FontSize="13" Width="155">
@@ -34,11 +32,11 @@
 
                 <StackPanel>
                     <Button x:Name="btnDropdownCondition" Content="Állapot" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
-                    <Button Content="Kitűnő" Visibility="Collapsed" Click="buttonCondition_Click"/>
-                    <Button Content="Újszerű" Visibility="Collapsed" Click="buttonCondition_Click"/>
-                    <Button Content="Megkímélt" Visibility="Collapsed" Click="buttonCondition_Click"/>
-                    <Button Content="Sérülésmentes" Visibility="Collapsed" Click="buttonCondition_Click"/>
-                    <Button Content="Sérült" Visibility="Collapsed" Click="buttonCondition_Click"/>
+                    <Button Content="Kitűnő" Visibility="Collapsed"/>
+                    <Button Content="Újszerű" Visibility="Collapsed"/>
+                    <Button Content="Megkímélt" Visibility="Collapsed"/>
+                    <Button Content="Sérülésmentes" Visibility="Collapsed"/>
+                    <Button Content="Sérült" Visibility="Collapsed"/>
                 </StackPanel>
 
                 <StackPanel>
@@ -57,9 +55,9 @@
                 <StackPanel>
                     <Button x:Name="btnDropdownHeight" Content="Kivitel" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
                     <StackPanel Orientation="Horizontal" Visibility="Collapsed">
-                        <TextBox x:Name="tbMinHeight" Text="" Width="75" TextAlignment="Center"/>
+                        <TextBox x:Name="tbMinHeight" Width="75" TextAlignment="Center" LostKeyboardFocus="tbMinHeight_LostKeyboardFocus"/>
                         <Label Content="-tól"></Label>
-                        <TextBox x:Name="tbMaxHeight" Text="" Width="75" TextAlignment="Center"/>
+                        <TextBox x:Name="tbMaxHeight" Width="75" TextAlignment="Center" LostKeyboardFocus="tbMaxHeight_LostKeyboardFocus"/>
                         <Label Content="-ig"/>
                         <Label Content="[cm]" Margin="30,0,0,0"/>
                     </StackPanel>

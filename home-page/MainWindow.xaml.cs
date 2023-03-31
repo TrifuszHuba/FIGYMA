@@ -23,7 +23,7 @@ namespace home_page
         public MainWindow()
         {
             InitializeComponent();
-            personDataWrite();  
+            personDataWrite();
         }
         
         private void btnDropdown_Click(object sender, RoutedEventArgs e)
@@ -46,11 +46,6 @@ namespace home_page
             }
         }
 
-        private void buttonCondition_Click(object sender, RoutedEventArgs e)
-        {
-            Button b = sender as Button;
-
-        }
         int weight;
         private void buttonWeight_Click(object sender, RoutedEventArgs e)
         {
@@ -66,14 +61,62 @@ namespace home_page
                 int weight2 = int.Parse(w[1]);
                 weight = (weight1 + weight2) / 2;
             }
+            //else
+            //{
+                
+            //}
         }
-        int height;
-        private void getHeight()
-        {
-            if ()
-            {
 
+        int minHeight = 0;
+        private void tbMinHeight_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            TextBox t = sender as TextBox;
+            minHeight = int.Parse(t.Text);
+
+            if (minHeight != 0 && maxHeight != 0)
+            {
+                Height();
+                bmi();
             }
+        }
+        int maxHeight = 0;
+        private void tbMaxHeight_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            TextBox t = sender as TextBox;
+            maxHeight = int.Parse(t.Text);
+
+            if (minHeight != 0 && maxHeight != 0)
+            {
+                Height();
+                bmi();
+            }
+
+        }
+
+        string heightForAI;
+        int height = 0;
+        private void Height()
+        { 
+            if (minHeight > 170 && maxHeight > 180)
+            {
+                heightForAI = "tall";
+            }
+            else if (minHeight > 130 && maxHeight< 170) 
+            {
+                heightForAI = "average height";
+            }
+            else if (minHeight > 70 && maxHeight < 160)
+            {
+                heightForAI = "short";
+            }
+
+            height = (minHeight + maxHeight) / 2;
+            MessageBox.Show(height.ToString(), heightForAI);
+        }
+        private void bmi()
+        {
+            double bmi = weight / ((height/100.0) * (height / 100.0));
+            // finish BMI calculation
         }
 
         string modelPickerColor = "";
@@ -186,6 +229,5 @@ namespace home_page
         {
             // Weöres Sándor: Baszás, szex, kúrás
         }
-
     }
 }
