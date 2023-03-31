@@ -51,7 +51,7 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <TextBox x:Name="tbPasswordCreate" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,634,0,0" Background="#DEE2E6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px">
+        <TextBox x:Name="tbPasswordCreate" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,634,0,0" Background="#DEE2E6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px" GotFocus="Next1">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
@@ -71,7 +71,7 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <TextBox x:Name="tbPasswordCreateRepeat" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,694,0,0" Background="#DEE2E6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px">
+        <TextBox x:Name="tbPasswordCreateRepeat" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,694,0,0" Background="#DEE2E6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px" GotFocus="Next2">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>

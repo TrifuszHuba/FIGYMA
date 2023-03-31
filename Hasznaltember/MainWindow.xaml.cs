@@ -21,7 +21,7 @@ namespace Hasznaltember
         public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string Asd { get; set; }
+        public string Pass { get; set; }
 
         public MainWindow()
         {
@@ -30,10 +30,11 @@ namespace Hasznaltember
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            bool valid = false;
             Password = null;
             Email = null;
             Username = null;
-            Asd = null;
+            Pass = null;
             try
             {
                 string[] row = File.ReadAllLines(@$"Z:\_IKT\hasznaltember.hu\Hasznaltember\adatok\{tbUsername.Text}.txt");
@@ -42,24 +43,35 @@ namespace Hasznaltember
                     string[] data = row[i].Split(';');
                     Username = data[0];
                     Email = data[1];
-                    Asd = data[2];
+                    Pass = data[2];
                 }
                 lbUsernameError.Content = "";
                 lbPasswordError.Content = "";
+                valid = true;
             }
             catch (Exception a)
             {
                 lbUsernameError.Content = "Hibás felhasználónév";
+                valid = false;
             }
-            string[] password = Asd.Split("§");
-            Password = password[0];
-            if (pbPassword.Password == Password)
+            if (valid)
             {
-                MessageBox.Show("Bejelentkeztél te Majom");
-            }
-            else
-            {
-                lbPasswordError.Content = "Hibás jelszó";
+                string[] password = Pass.Split("§");
+                string pass1 = password[0].Remove(password[0].Length - 1);
+                string pass = pass1.Remove(pass1.Length - 1);
+
+                string pw = pbPassword.Password;
+                byte[] bytes = Encoding.UTF8.GetBytes(pw);
+                string pass2 = Convert.ToHexString(bytes);
+
+                if (pass == pass2)
+                {
+                    MessageBox.Show("Bejelentkeztél te Majom");
+                }
+                else
+                {
+                    lbPasswordError.Content = "Hibás jelszó";
+                }
             }
         }
 
@@ -79,10 +91,14 @@ namespace Hasznaltember
         private void PasswordChangedHandler(object sender, RoutedEventArgs args)
         {
             tblPassword.Text = "";
-            if(pbPassword.Password == "")
+            if (pbPassword.Password == "")
             {
                 tblPassword.Text = "password";
             }
+        }
+        private void Next(object sender, RoutedEventArgs e)
+        {
+            pbPassword.Focus();
         }
     }
 }

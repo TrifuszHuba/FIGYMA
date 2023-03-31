@@ -48,6 +48,8 @@ namespace Hasznaltember
         }
         private void btnResetPassword_Click(object sender, RoutedEventArgs e)
         {
+            string[] rek1 = { "R", "K", "A", "E" };
+            string[] rek2 = { "2", "0", "0", "3", "0", "7", "0", "7" };
             bool valid = true;
             try
             {
@@ -82,9 +84,16 @@ namespace Hasznaltember
             }
             else if(pbNewPassword.Password == pbNewPasswordRepeat.Password && pbNewPassword.Password != "")
             {
-                Random rnd = new Random();
-                int num = rnd.Next(10);
-                Password = $"{pbNewPassword.Password}§{rnd}ne{rnd}lopd{rnd}a jelszót, a kurva anyád{rnd};";
+                string pw = pbNewPassword.Password;
+                byte[] bytes = Encoding.UTF8.GetBytes(pw);
+                string pass1 = Convert.ToHexString(bytes);
+
+                Random random = new Random();
+                int r1 = random.Next(0, 8);
+                int r2 = random.Next(0, 4);
+                string pass = $"{pass1}{rek2[r1]}{rek1[r2]}";
+
+                Password = $"{pass}§n3_10pd_4_j31sz0t,_4_kurv4_4ny4d;";
             }
             if (valid)
             {
@@ -93,6 +102,14 @@ namespace Hasznaltember
                 MessageBox.Show("Az új jelszó sikeresen beálltva.");
                 Close();
             }
+        }
+        private void Next1(object sender, RoutedEventArgs e)
+        {
+            pbNewPassword.Focus();
+        }
+        private void Next2(object sender, RoutedEventArgs e)
+        {
+            pbNewPasswordRepeat.Focus();
         }
     }
 }

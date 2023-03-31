@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -51,6 +52,8 @@ namespace Hasznaltember
             string password;
             string lowercase = pbPasswordCreate.Password.ToLower();
             string[] specialChar = {"@","&","#","<",">","{","}","?",",",";",".","-","*","_","|","$","[","]","'","+","~","ˇ","^","!","˘","%","°","/","˛","=","`","(",")","˙","´","˝","¨","¸"};
+            string[] rek1 = { "R", "K", "A", "E"};
+            string[] rek2 = { "2", "0", "0", "3", "0", "7", "0", "7" };
             bool contains = false;
             foreach (string a in specialChar)
             {
@@ -101,9 +104,16 @@ namespace Hasznaltember
             }
             else if (valid)
             {
-                Random rnd = new Random();
-                int num = rnd.Next(10);
-                password = $"{pbPasswordCreate.Password}§{rnd}ne{rnd}lopd{rnd}a jelszót, a kurva anyád{rnd};";
+                string pw = pbPasswordCreate.Password;
+                byte[] bytes = Encoding.UTF8.GetBytes(pw);
+                string pass1 = Convert.ToHexString(bytes);
+
+                Random random = new Random();
+                int r1 = random.Next(0, 8);
+                int r2 = random.Next(0, 4);
+                string pass = $"{pass1}{rek2[r1]}{rek1[r2]}";
+
+                password = $"{pass}§n310pd4j31sz0t,4kurv44ny4d;";
                 data += password;
             }
             if (valid)
@@ -112,6 +122,14 @@ namespace Hasznaltember
                 MessageBox.Show("Sikeres regisztráció, vadászatra fel! grrr");
                 Close();
             }
+        }
+        private void Next1(object sender, RoutedEventArgs e)
+        {
+            pbPasswordCreate.Focus();
+        }
+        private void Next2(object sender, RoutedEventArgs e)
+        {
+            pbPasswordCreateRepeat.Focus();
         }
     }
 }

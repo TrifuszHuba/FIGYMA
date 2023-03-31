@@ -32,7 +32,7 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <TextBox x:Name="tbPassword" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,574,0,0" Background="#DEE2E6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px">
+        <TextBox x:Name="tbPassword" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,574,0,0" Background="#DEE2E6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px" GotFocus="Next">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
