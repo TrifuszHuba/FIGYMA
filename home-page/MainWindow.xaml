@@ -55,7 +55,7 @@
                 <StackPanel>
                     <Button x:Name="btnDropdownHeight" Content="Kivitel" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
                     <StackPanel Orientation="Horizontal" Visibility="Collapsed">
-                        <TextBox x:Name="tbMinHeight" Width="75" TextAlignment="Center" LostKeyboardFocus="tbMinHeight_LostKeyboardFocus"/>
+                        <TextBox x:Name="tbMinHeight" Width="75" TextAlignment="Center" Margin="5,0,0,0" LostKeyboardFocus="tbMinHeight_LostKeyboardFocus"/>
                         <Label Content="-tól"></Label>
                         <TextBox x:Name="tbMaxHeight" Width="75" TextAlignment="Center" LostKeyboardFocus="tbMaxHeight_LostKeyboardFocus"/>
                         <Label Content="-ig"/>
@@ -83,7 +83,7 @@
                     <Button x:Name="btnDropdownLimbs" Content="Ajtók száma" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
                     <StackPanel Margin="50,0,0,0" Orientation="Horizontal" Visibility="Collapsed">
                         <Button x:Name="minusButton" Content="-" Width="40" Height="40" Margin="0,0,30,0" Click="minusButton_Click"/>
-                        <TextBox x:Name="tbDoors" Width="55" Height="55" Margin="0,0,30,0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="4" IsEnabled="False"/>
+                        <TextBox x:Name="tbLimbs" Width="55" Height="55" Margin="0,0,30,0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="4" IsEnabled="False"/>
                         <Button x:Name="plusButton" Content="+" Width="40" Height="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="plusButton_Click"/>
                     </StackPanel>
                 </StackPanel>
@@ -91,37 +91,53 @@
                 <StackPanel>
                     <Button x:Name="btnDropdownYear" Content="Évjárat" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
                     <StackPanel Orientation="Horizontal" Visibility="Collapsed">
-                        <TextBox x:Name="yearFrom" Text="" Width="100" TextAlignment="Center"/>
+                        <TextBox x:Name="tbMinYear" Text="" Width="100" Margin="5,0,0,0" TextAlignment="Center" LostKeyboardFocus="tbMinYear_LostKeyboardFocus"/>
                         <Label Content="-tól"></Label>
-                        <TextBox x:Name="yearTo" Text="" Width="100" TextAlignment="Center"/>
+                        <TextBox x:Name="tbMaxYear" Text="" Width="100" TextAlignment="Center" LostKeyboardFocus="tbMaxYear_LostKeyboardFocus"/>
                         <Label Content="-ig"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel>
                     <Button x:Name="btnDropdownBackground" Content="Ellenőrizhető előélet" Width="398" Height="55" FontWeight="Bold" Margin="0,10,0,15" Click="btnDropdown_Click"/>
-                    <Button Content="Igen" Visibility="Collapsed"/>
-                    <Button Content="Nem" Visibility="Collapsed"/>
+                    <Button x:Name="btnBackgroundYes" Content="Igen" Visibility="Collapsed" Click="btnBackgroundYes_Click"/>
+                    <Button x:Name="btnBackgroundNo" Content="Nem" Visibility="Collapsed" Click="btnBackgroundNo_Click"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <Button x:Name="btnDropdownHair" Content="Tető szín" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
-                    <Slider Name="pickerHair" Visibility="Collapsed" Width="398" Height="55" VerticalAlignment="Center">
-                        <Slider.Background>
-                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <Button x:Name="btnDropdownHair" Content="Fényezés" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
+                    <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                        <Button Background="White" Height="45" Width="45" Margin="30,5,5,5" Click="btnHairColorClick"/>
+                        <Button Background="Yellow" Height="45" Width="45" Margin="5" Click="btnHairColorClick"/>
+                        <Button Background="Orange" Height="45" Width="45" Margin="5" Click="btnHairColorClick"/>
+                        <Button Background="Red" Height="45" Width="45" Margin="5" Click="btnHairColorClick"/>
+                        <Button Background="Brown" Height="45" Width="45" Margin="5" Click="btnHairColorClick"/>
+                        <Button Background="Gray" Height="45" Width="45" Margin="5" Click="btnHairColorClick"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                        <Button Background="Green" Height="45" Width="45" Margin="50,5,5,5" Click="btnHairColorClick"/>
+                        <Button Background="Blue" Height="45" Width="45" Margin="5" Click="btnHairColorClick"/>
+                        <Button Background="pink" Height="45" Width="45" Margin="5" Click="btnHairColorClick"/>
+                        <Button Background="Purple" Height="45" Width="45" Margin="5" Click="btnHairColorClick"/>
+                        <Button Background="Black" Height="45" Width="45" Margin="5" Click="btnHairColorClick"/>
+                    </StackPanel>
+                    <!--<Slider Name="pickerHair" Visibility="Collapsed" Width="398" Height="55" Maximum="255" VerticalAlignment="Center" Thumb.DragCompleted="pickerHair_DragCompleted">
+                      <Slider.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="White" Offset="0" />
-                                    <GradientStop Color="red" Offset="0.1428571428571429" />
+                                    <GradientStop Color="White" Offset="0.05" />
+                                    <GradientStop Color="yellow" Offset="0.1428571428571429" />
                                     <GradientStop Color="orange" Offset="0.2857142857142858" />
-                                    <GradientStop Color="yellow" Offset="0.4285714285714287" />
+                                    <GradientStop Color="red" Offset="0.4285714285714287" />
+                                    <GradientStop Color="Brown" Offset="0.5" />
                                     <GradientStop Color="green" Offset="0.5714285714285716" />
                                     <GradientStop Color="blue" Offset="0.7142857142857145" />
                                     <GradientStop Color="violet" Offset="0.8571428571428574" />
-                                    <GradientStop Color="Black" Offset="1" />
+                                    <GradientStop Color="Black" Offset="0.95" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
-                        </Slider.Background>
-                    </Slider>
+                      </Slider.Background>
+                    </Slider>-->
                 </StackPanel>
 
                 <StackPanel>

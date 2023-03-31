@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.Intrinsics.X86;
@@ -20,6 +21,7 @@ namespace home_page
 {
     public partial class MainWindow : Window
     {
+        Random random = new Random();
         public MainWindow()
         {
             InitializeComponent();
@@ -93,7 +95,7 @@ namespace home_page
 
         }
 
-        string heightForAI;
+        string heightForAI = "";
         int height = 0;
         private void Height()
         { 
@@ -111,12 +113,31 @@ namespace home_page
             }
 
             height = (minHeight + maxHeight) / 2;
-            MessageBox.Show(height.ToString(), heightForAI);
         }
+        string bodyTypeFromBMI = "";
         private void bmi()
         {
             double bmi = weight / ((height/100.0) * (height / 100.0));
-            // finish BMI calculation
+            if (bmi < 18.5)
+            {
+                bodyTypeFromBMI = "skinny";
+            }
+            else if (bmi < 25)
+            {
+                bodyTypeFromBMI = "normal weight";
+            }
+            else if (bmi < 30)
+            {
+                bodyTypeFromBMI = "overweight";
+            }
+            else if (bmi < 35)
+            {
+                bodyTypeFromBMI = "obese";
+            }
+            else
+            {
+                bodyTypeFromBMI= "extremely obese";
+            }
         }
 
         string modelPickerColor = "";
@@ -142,6 +163,128 @@ namespace home_page
             }
         }
 
+        private void minusButton_Click(object sender, RoutedEventArgs e)
+        {
+            int limbsNum = int.Parse(tbLimbs.Text);
+
+            if (limbsNum > 0)
+            {
+                limbsNum--;
+                tbLimbs.Text = limbsNum.ToString();
+            }
+        }
+
+        private void plusButton_Click(object sender, RoutedEventArgs e)
+        {
+            int limbsNum = int.Parse(tbLimbs.Text);
+
+            if (limbsNum < 5 && chbMale.IsChecked == true)
+            {
+                limbsNum++;
+                tbLimbs.Text = limbsNum.ToString();
+            }
+            else if (limbsNum < 4)
+            {
+                limbsNum++;
+                tbLimbs.Text = limbsNum.ToString();
+            }
+        }
+
+
+        int minYear = 0;
+        private void tbMinYear_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            TextBox t = sender as TextBox;
+            minYear = int.Parse(t.Text);
+
+            if (minYear != 0 && maxYear != 0)
+            {
+                Year();
+            }
+        }
+        int maxYear = 0;
+        private void tbMaxYear_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            TextBox t = sender as TextBox;
+            maxYear = int.Parse(t.Text);
+
+            if (minYear != 0 && maxYear != 0)
+            {
+                Year();
+            }
+
+        }
+        string age = "";
+        private void Year()
+        {
+            int now = DateTime.Now.Year;
+            int year = random.Next(minYear, maxYear+1);
+
+            if (now - year < 10)
+            {
+                age = "kid under the age of 10";
+            }
+            else if (now - year < 20)
+            {
+                age = "in his/her teens";
+            }
+            else if (now - year < 30)
+            {
+                age = "in his/her 20s";
+            }
+            else if (now - year < 40)
+            {
+                age = "in his/her 30s";
+            }
+            else if (now - year < 50)
+            {
+                age = "in his/her 40s";
+            }
+            else if (now - year < 60)
+            {
+                age = "in his/her 50s";
+            }
+            else if (now - year < 70)
+            {
+                age = "in his/her 60s";
+            }
+            else if (now - year < 80)
+            {
+                age = "in his/her 70s";
+            }
+            else if (now - year < 90)
+            {
+                age = "in his/her 80s";
+            }
+            else if (now - year < 100)
+            {
+                age= "in his/her 90s";
+            }
+            else
+            {
+                age = "over the age of 100";
+            }
+        }
+
+        string background = "";
+        private void btnBackgroundYes_Click(object sender, RoutedEventArgs e)
+        {
+            background = "honest looking person";
+        }
+
+        private void btnBackgroundNo_Click(object sender, RoutedEventArgs e)
+        {
+            background = "possibly criminal";
+        }
+
+        string hairColor = "";
+        private void btnHairColorClick(object sender, RoutedEventArgs e) 
+        {
+            Button b = sender as Button;
+            System.Drawing.Color col = ColorTranslator.FromHtml(b.Background.ToString());
+            hairColor = col.Name.ToLower();
+        }
+
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
             List<string> data = new List<string>();
@@ -153,7 +296,7 @@ namespace home_page
             else if (chbMale.IsChecked == false && chbFemale.IsChecked == true) {
                 data.Add("woman");
             }
-            else if (chbMale.IsChecked == true && chbFemale.IsChecked == true) 
+            else if (chbMale.IsChecked == true && chbFemale.IsChecked == true)
             {
                 data.Add("transgender person");
             }
@@ -162,47 +305,60 @@ namespace home_page
                 data.Add("human");
             }
 
+            if (heightForAI != "")
+            {
+                data.Add(heightForAI);
+            }
 
-            //data.Add();
+            if (bodyTypeFromBMI != "")
+            {
+                data.Add(bodyTypeFromBMI);
+            }
 
+            if (modelPickerColor != "")
+            {
+                data.Add(modelPickerColor);
+            }
+
+            if (tbLimbs.Text == "5")
+            {
+                data.Add("with 4 limbs");
+            }
+            else
+            {
+                data.Add($"with {tbLimbs.Text} limbs");
+            }
+
+            if (age != "")
+            {
+                data.Add(age);
+            }
+
+            if (background != "")
+            {
+                data.Add(background);
+            }
+
+            if (hairColor != "")
+            {
+                data.Add($"with {hairColor} hair");
+            }
 
             foreach (var item in data)
             {
                 File.WriteAllText("personData.txt", item + ";");
-
+                MessageBox.Show(item);
             }
         }
+
+
+
+
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Image image = sender as Image;
             mainPicture.Source = image.Source;
             image.Source = mainPicture.Source;
-        }
-        private void minusButton_Click(object sender, RoutedEventArgs e)
-        {
-            int doorsNum = int.Parse(tbDoors.Text);
-
-            if (doorsNum > 0)
-            {
-                doorsNum--;
-                tbDoors.Text = doorsNum.ToString();
-            }
-        }
-
-        private void plusButton_Click(object sender, RoutedEventArgs e)
-        {
-            int doorsNum = int.Parse(tbDoors.Text);
-
-            if (doorsNum < 5 && chbMale.IsChecked == true)
-            {
-                doorsNum++;
-                tbDoors.Text = doorsNum.ToString();
-            }
-            else if (doorsNum < 4)
-            {
-                doorsNum++;
-                tbDoors.Text = doorsNum.ToString();
-            }
         }
 
         private void previousButton_Click(object sender, RoutedEventArgs e)
