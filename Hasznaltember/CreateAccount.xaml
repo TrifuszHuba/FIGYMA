@@ -98,8 +98,8 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Label x:Name="lbNewUsernameError" Content="" HorizontalAlignment="Left" Margin="1141,523,0,0" VerticalAlignment="Top" Width="214" Foreground="OrangeRed" FontSize="16px"/>
-        <Label x:Name="lbNewEmailError" Content="" HorizontalAlignment="Left" Margin="1141,583,0,0" VerticalAlignment="Top" Width="214" Foreground="OrangeRed" FontSize="16px"/>
-        <Label x:Name="lbNewPasswordError" Content="" HorizontalAlignment="Left" Margin="1141,643,0,0" VerticalAlignment="Top" Width="769" Foreground="OrangeRed" FontSize="16px"/>
+        <Label x:Name="lbNewUsernameError" Content="" HorizontalAlignment="Left" Margin="1141,523,0,0" VerticalAlignment="Top" Width="717" Foreground="OrangeRed" FontSize="16px"/>
+        <Label x:Name="lbNewEmailError" Content="" HorizontalAlignment="Left" Margin="1141,583,0,0" VerticalAlignment="Top" Width="717" Foreground="OrangeRed" FontSize="16px"/>
+        <Label x:Name="lbNewPasswordError" Content="" HorizontalAlignment="Left" Margin="1141,643,0,0" VerticalAlignment="Top" Width="717" Foreground="OrangeRed" FontSize="16px"/>
     </Grid>
 </Window>
