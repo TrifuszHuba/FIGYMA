@@ -113,7 +113,7 @@ namespace Hasznaltember
                 int r2 = random.Next(0, 4);
                 string pass = $"{pass1}{rek2[r1]}{rek1[r2]}";
 
-                password = $"{pass}§n310pd4j31sz0t,4kurv44ny4d;";
+                password = $"{pass}§n3_10pd_4_j31sz0t,_4_kurv4_4ny4d;";
                 data += password;
             }
             if (valid)
