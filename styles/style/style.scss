@@ -1,0 +1,74 @@
+$background_color: rgb(10, 10, 10);
+$text_color: rgb(255, 255, 255);
+$font_family: 'Outfit', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap');
+
+@keyframes scroll_title_right {
+    to {
+        transform: translateX(200vw);
+    }
+}
+
+@keyframes scroll_title_left {
+    to {
+        transform: translateX(-200vw);
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: $background_color;
+    font-family: $font_family;
+    overflow-x: hidden;
+
+    .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        margin-top: 12vh;
+
+        .title_container {
+            position: fixed;
+            color: $text_color;
+            font-size: 20vw;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+
+            .title {
+                width: min-content;
+                margin: 0 5vw 0 3vw;
+
+                span {
+                    height: 17vw;
+                    display: block;
+                }
+            }
+
+            .title_top {
+                align-self: flex-start;
+                animation: scroll_title_left 0.3s linear infinite;
+                animation-play-state: paused;
+                animation-delay: calc(var(--scroll) * -1s);
+            }
+
+            .title_bottom {
+                align-self: flex-end;
+                animation: scroll_title_right 0.4s linear infinite;
+                animation-play-state: paused;
+                animation-delay: calc(var(--scroll) * -1s);
+            }
+        }
+    }
+
+    .temp_scroll {
+        width: 100vw;
+        height: 5000px;
+    }
+}
