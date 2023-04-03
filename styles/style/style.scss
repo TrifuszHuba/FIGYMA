@@ -21,54 +21,57 @@ $font_family: 'Outfit', sans-serif;
     margin: 0;
 }
 
-body {
-    background-color: $background_color;
-    font-family: $font_family;
+html {
     overflow-x: hidden;
 
-    .container {
-        height: 100vh;
-        width: 100vw;
-        display: flex;
-        margin-top: 12vh;
+    body {
+        background-color: $background_color;
+        font-family: $font_family;
+        color: $text_color;
 
-        .title_container {
-            position: fixed;
-            color: $text_color;
-            font-size: 20vw;
+        .container {
+            height: 100vh;
             width: 100vw;
             display: flex;
-            flex-direction: column;
-            justify-items: center;
+            margin-top: 12vh;
 
-            .title {
-                width: min-content;
-                margin: 0 5vw 0 3vw;
+            .title_container {
+                position: fixed;
+                font-size: 20vw;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                justify-items: center;
 
-                span {
-                    height: 17vw;
-                    display: block;
+                .title {
+                    width: min-content;
+                    margin: 0 5vw 0 3vw;
+
+                    span {
+                        height: 17vw;
+                        display: block;
+                    }
+                }
+
+                .title_top {
+                    align-self: flex-start;
+                    animation: scroll_title_left 0.3s forwards;
+                    animation-play-state: paused;
+                    animation-delay: calc(var(--scroll) * -1s);
+                }
+
+                .title_bottom {
+                    align-self: flex-end;
+                    animation: scroll_title_right 0.4s forwards;
+                    animation-play-state: paused;
+                    animation-delay: calc(var(--scroll) * -1s);
                 }
             }
-
-            .title_top {
-                align-self: flex-start;
-                animation: scroll_title_left 0.3s linear infinite;
-                animation-play-state: paused;
-                animation-delay: calc(var(--scroll) * -1s);
-            }
-
-            .title_bottom {
-                align-self: flex-end;
-                animation: scroll_title_right 0.4s linear infinite;
-                animation-play-state: paused;
-                animation-delay: calc(var(--scroll) * -1s);
-            }
         }
-    }
 
-    .temp_scroll {
-        width: 100vw;
-        height: 5000px;
+        .temp_scroll {
+            width: 100vw;
+            height: 5000px;
+        }
     }
 }

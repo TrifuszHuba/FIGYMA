@@ -14,48 +14,50 @@
   margin: 0;
 }
 
-body {
-  background-color: rgb(10, 10, 10);
-  font-family: "Outfit", sans-serif;
+html {
   overflow-x: hidden;
 }
-body .container {
+html body {
+  background-color: rgb(10, 10, 10);
+  font-family: "Outfit", sans-serif;
+  color: rgb(255, 255, 255);
+}
+html body .container {
   height: 100vh;
   width: 100vw;
   display: flex;
   margin-top: 12vh;
 }
-body .container .title_container {
+html body .container .title_container {
   position: fixed;
-  color: rgb(255, 255, 255);
   font-size: 20vw;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-items: center;
 }
-body .container .title_container .title {
+html body .container .title_container .title {
   width: -moz-min-content;
   width: min-content;
   margin: 0 5vw 0 3vw;
 }
-body .container .title_container .title span {
+html body .container .title_container .title span {
   height: 17vw;
   display: block;
 }
-body .container .title_container .title_top {
+html body .container .title_container .title_top {
   align-self: flex-start;
-  animation: scroll_title_left 0.3s linear infinite;
+  animation: scroll_title_left 0.3s forwards;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -1s);
 }
-body .container .title_container .title_bottom {
+html body .container .title_container .title_bottom {
   align-self: flex-end;
-  animation: scroll_title_right 0.4s linear infinite;
+  animation: scroll_title_right 0.4s forwards;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -1s);
 }
-body .temp_scroll {
+html body .temp_scroll {
   width: 100vw;
   height: 5000px;
 }/*# sourceMappingURL=style.css.map */
