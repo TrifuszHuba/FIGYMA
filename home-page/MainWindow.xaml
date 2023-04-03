@@ -100,8 +100,8 @@
 
                 <StackPanel>
                     <Button x:Name="btnDropdownBackground" Content="Ellenőrizhető előélet" Width="398" Height="55" FontWeight="Bold" Margin="0,10,0,15" Click="btnDropdown_Click"/>
-                    <Button x:Name="btnBackgroundYes" Content="Igen" Visibility="Collapsed" Click="btnBackgroundYes_Click"/>
-                    <Button x:Name="btnBackgroundNo" Content="Nem" Visibility="Collapsed" Click="btnBackgroundNo_Click"/>
+                    <Button x:Name="btnBackgroundYes" Content="Igen" Visibility="Collapsed"/>
+                    <Button x:Name="btnBackgroundNo" Content="Nem" Visibility="Collapsed"/>
                 </StackPanel>
 
                 <StackPanel>
@@ -182,10 +182,24 @@
 
 
         <Image x:Name="mainPicture" Grid.Column="1" HorizontalAlignment="Left" Height="800" Width="550" Margin="170,64,0,266" Source="/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" Stretch="UniformToFill"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="120" Margin="170,912,0,0" VerticalAlignment="Top" Width="120" Source="/samoyed.jpg" Stretch="UniformToFill" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="120" Margin="311,912,0,0" VerticalAlignment="Top" Width="120" Source="/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" Stretch="UniformToFill" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="120" Margin="457,912,0,0" VerticalAlignment="Top" Width="120" Source="/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" Stretch="UniformToFill" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="120" Margin="600,912,0,0" VerticalAlignment="Top" Width="120" Source="/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" Stretch="UniformToFill" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <Button x:Name="NObutton" Grid.Column="1" HorizontalAlignment="Left" Margin="260,918,0,0" VerticalAlignment="Top" Width="120" Height="120" Click="NObutton_Click">
+            <Image Source="/red-cross-mark-png-transparent-images-red-x-mark-transparent-11563359010asbhytefsx.png"/>
+            <!--alt: puke emoji-->
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="60"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="YESbutton" Grid.Column="1" HorizontalAlignment="Left" Margin="510,918,0,0" VerticalAlignment="Top" Width="120" Height="120" Click="YESbutton_Click">
+            <Image Source="/52-528870_green-tick-clipart-benefit-green-check-mark-hd.png"/>
+            <!--alt: horny emoji-->
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="60"/>
+                </Style>
+            </Button.Resources>
+        </Button>
         <Button x:Name="previousButton" Grid.Column="1" Content="&lt;" HorizontalAlignment="Left" Margin="47,0,0,0" VerticalAlignment="Center" Width="70" Height="70" Click="previousButton_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -200,22 +214,6 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBox x:Name="personData" Grid.Column="1" HorizontalAlignment="Left" Margin="910,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="800" Width="550" Background="#DEE2E6"/>
-        <Button x:Name="NObutton" Grid.Column="1" HorizontalAlignment="Left" Margin="994,918,0,0" VerticalAlignment="Top" Width="120" Height="120" Click="NObutton_Click">
-            <Image Source="/red-cross-mark-png-transparent-images-red-x-mark-transparent-11563359010asbhytefsx.png"/> <!--alt: puke emoji-->
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="60"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button x:Name="YESbutton" Grid.Column="1" HorizontalAlignment="Left" Margin="1288,918,0,0" VerticalAlignment="Top" Width="120" Height="120" Click="YESbutton_Click">
-            <Image Source="/52-528870_green-tick-clipart-benefit-green-check-mark-hd.png"/> <!--alt: horny emoji-->
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="60"/>
-                </Style>
-            </Button.Resources>
-        </Button>
+        <TextBox x:Name="personData" Grid.Column="1" HorizontalAlignment="Left" Margin="910,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="900" Width="550" Background="#DEE2E6"/>
     </Grid>
 </Window>

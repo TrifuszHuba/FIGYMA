@@ -63,10 +63,10 @@ namespace home_page
                 int weight2 = int.Parse(w[1]);
                 weight = (weight1 + weight2) / 2;
             }
-            //else
-            //{
-                
-            //}
+            else
+            {
+                weight = 300;
+            }
         }
 
         int minHeight = 0;
@@ -134,9 +134,13 @@ namespace home_page
             {
                 bodyTypeFromBMI = "obese";
             }
-            else
+            else if (bmi < 40)
             {
                 bodyTypeFromBMI= "extremely obese";
+            }
+            else
+            {
+                bodyTypeFromBMI = "fattest person on the world";
             }
         }
 
@@ -220,61 +224,27 @@ namespace home_page
             int now = DateTime.Now.Year;
             int year = random.Next(minYear, maxYear+1);
 
-            if (now - year < 10)
+            if (now - year >= 18 && now - year <= 25)
             {
-                age = "kid under the age of 10";
+                age = "young adult";
             }
-            else if (now - year < 20)
+            else if (now - year >= 26 && now - year <= 40)
             {
-                age = "in his/her teens";
+                age = "adult";
             }
-            else if (now - year < 30)
+            else if (now - year >= 41 && now - year <= 65)
             {
-                age = "in his/her 20s";
+                age = "middle aged";
             }
-            else if (now - year < 40)
+            else if (now - year >= 66 && now - year <= 85)
             {
-                age = "in his/her 30s";
-            }
-            else if (now - year < 50)
-            {
-                age = "in his/her 40s";
-            }
-            else if (now - year < 60)
-            {
-                age = "in his/her 50s";
-            }
-            else if (now - year < 70)
-            {
-                age = "in his/her 60s";
-            }
-            else if (now - year < 80)
-            {
-                age = "in his/her 70s";
-            }
-            else if (now - year < 90)
-            {
-                age = "in his/her 80s";
-            }
-            else if (now - year < 100)
-            {
-                age= "in his/her 90s";
+                age = "old";
             }
             else
             {
-                age = "over the age of 100";
+                age = "very old";
             }
-        }
 
-        string background = "";
-        private void btnBackgroundYes_Click(object sender, RoutedEventArgs e)
-        {
-            background = "honest looking person";
-        }
-
-        private void btnBackgroundNo_Click(object sender, RoutedEventArgs e)
-        {
-            background = "possibly criminal";
         }
 
         string hairColor = "";
@@ -320,13 +290,9 @@ namespace home_page
                 data.Add(modelPickerColor);
             }
 
-            if (tbLimbs.Text == "5")
+            if (int.Parse(tbLimbs.Text) < 4)
             {
-                data.Add("with 4 limbs");
-            }
-            else
-            {
-                data.Add($"with {tbLimbs.Text} limbs");
+                data.Add("disabled");
             }
 
             if (age != "")
@@ -334,20 +300,14 @@ namespace home_page
                 data.Add(age);
             }
 
-            if (background != "")
-            {
-                data.Add(background);
-            }
-
             if (hairColor != "")
             {
-                data.Add($"with {hairColor} hair");
+                data.Add(hairColor);
             }
 
             foreach (var item in data)
             {
                 File.WriteAllText("personData.txt", item + ";");
-                MessageBox.Show(item);
             }
         }
 
