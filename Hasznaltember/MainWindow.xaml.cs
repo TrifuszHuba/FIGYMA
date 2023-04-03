@@ -93,7 +93,7 @@ namespace Hasznaltember
             tblPassword.Text = "";
             if (pbPassword.Password == "")
             {
-                tblPassword.Text = "password";
+                tblPassword.Text = "jelszó";
             }
         }
         private void Next(object sender, RoutedEventArgs e)
