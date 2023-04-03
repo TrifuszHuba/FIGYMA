@@ -7,10 +7,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="CreateAccount.xaml.cs">
+    <Compile Update="CreateAccount.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ResetPassword.xaml.cs">
+    <Compile Update="ResetPassword.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

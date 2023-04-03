@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hasznaltember"
         mc:Ignorable="d"
         Title="Használtember/regisztráció" Height="1080" Width="1920"
-        Background="#343A40" WindowState="Maximized">
+        Background="#343A40" WindowState="Maximized" WindowStyle="None">
     <Grid>
         <Label Content="Használtember" HorizontalAlignment="Left" Margin="528,134,0,0" VerticalAlignment="Top" Height="116" Width="636" FontSize="96px" FontStyle="Italic" Foreground="#ADB5BD"/>
         <Label Content="." HorizontalAlignment="Left" Margin="1124,-401,0,0" VerticalAlignment="Top" FontSize="500px" Height="774" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Foreground="#ADB5BD" />
@@ -101,5 +101,7 @@
         <Label x:Name="lbNewUsernameError" Content="" HorizontalAlignment="Left" Margin="1141,523,0,0" VerticalAlignment="Top" Width="717" Foreground="OrangeRed" FontSize="16px"/>
         <Label x:Name="lbNewEmailError" Content="" HorizontalAlignment="Left" Margin="1141,583,0,0" VerticalAlignment="Top" Width="717" Foreground="OrangeRed" FontSize="16px"/>
         <Label x:Name="lbNewPasswordError" Content="" HorizontalAlignment="Left" Margin="1141,643,0,0" VerticalAlignment="Top" Width="717" Foreground="OrangeRed" FontSize="16px"/>
+        <Button x:Name="btnBackToMain" Foreground="#ADB5BD" Content="🢇" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="53" Width="53" FontSize="30px" Background="#343A40" BorderBrush="#343A40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnBackToMain_Click"/>
+        <Label x:Name="lbTick" Content="" HorizontalAlignment="Center" Margin="0,818,0,0" VerticalAlignment="Top" Height="100" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="70px"/>
     </Grid>
 </Window>

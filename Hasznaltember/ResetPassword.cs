@@ -61,6 +61,7 @@ namespace Hasznaltember
                     Email = data[1];
                     string password = data[2];
                 }
+                lbUsernameError.Content = "";
                 valid = true;
             }
             catch (Exception a)
@@ -77,6 +78,11 @@ namespace Hasznaltember
                 lbEmailError.Content = "Helytelen email";
                 valid = false;
             }
+            else
+            {
+                lbEmailError.Content = "";
+                valid = true;
+            }
             if(pbNewPassword.Password != pbNewPasswordRepeat.Password || pbNewPassword.Password == "")
             {
                 valid = false;
@@ -84,6 +90,9 @@ namespace Hasznaltember
             }
             else if(pbNewPassword.Password == pbNewPasswordRepeat.Password && pbNewPassword.Password != "")
             {
+                lbPasswordError.Content = "";
+                valid = true;
+
                 string pw = pbNewPassword.Password;
                 byte[] bytes = Encoding.UTF8.GetBytes(pw);
                 string pass1 = Convert.ToHexString(bytes);
@@ -99,8 +108,13 @@ namespace Hasznaltember
             {
                 string data = Username + ";" + Email + ";" + Password;
                 File.WriteAllText(@$"Z:\_IKT\hasznaltember.hu\Hasznaltember\adatok\{tbUsername.Text}.txt", data);
-                MessageBox.Show("Az új jelszó sikeresen beálltva.");
-                Close();
+
+                tbEmail.Text = "";
+                tbUsername.Text = "";
+                pbNewPassword.Password = "";
+                pbNewPasswordRepeat.Password = "";
+                lbTick.Content = "✔";
+                
             }
         }
         private void Next1(object sender, RoutedEventArgs e)
@@ -110,6 +124,11 @@ namespace Hasznaltember
         private void Next2(object sender, RoutedEventArgs e)
         {
             pbNewPasswordRepeat.Focus();
+        }
+
+        private void btnBackToMain_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

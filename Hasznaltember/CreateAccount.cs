@@ -62,14 +62,15 @@ namespace Hasznaltember
                     contains = true;
                 }
             }
-                try
+            try
             {
                 string text = File.ReadAllText(@$"Z:\_IKT\hasznaltember.hu\Hasznaltember\adatok\{tbUsernameCreate.Text}.txt");
                 valid = false;
-                lbNewUsernameError.Content = "Foglalt felhasználónév.";
+                lbNewUsernameError.Content = "Foglalt felhasználónév";
             }
             catch (Exception a)
             {
+                lbNewUsernameError.Content = "";
                 valid = true;
             }
             if (tbUsernameCreate.Text == "")
@@ -79,6 +80,7 @@ namespace Hasznaltember
             }
             else if (valid)
             {
+                lbNewUsernameError.Content = "";
                 username = $"{tbUsernameCreate.Text};";
                 data += username;
             }
@@ -89,6 +91,7 @@ namespace Hasznaltember
             }
             else if (valid)
             {
+                lbNewEmailError.Content = "";
                 email = $"{tbEmailCreate.Text};";
                 data += email;
             }
@@ -99,10 +102,11 @@ namespace Hasznaltember
             }
             else if (pbPasswordCreate.Password == lowercase || !contains)
             {
+                lbNewPasswordError.Content = "";
                 valid = false;
                 lbNewPasswordError.Content = "A jelszónak tartalmaznia kell legalább egy nagyvetűt és egy különleges karaktert";
             }
-            else if (valid)
+            if (valid)
             {
                 string pw = pbPasswordCreate.Password;
                 byte[] bytes = Encoding.UTF8.GetBytes(pw);
@@ -115,12 +119,14 @@ namespace Hasznaltember
 
                 password = $"{pass}§n3_10pd_4_j31sz0t,_4_kurv4_4ny4d;";
                 data += password;
-            }
-            if (valid)
-            {
+
                 File.WriteAllText(@$"Z:\_IKT\hasznaltember.hu\Hasznaltember\adatok\{tbUsernameCreate.Text}.txt", data);
-                MessageBox.Show("Sikeres regisztráció, vadászatra fel! grrr");
-                Close();
+
+                tbEmailCreate.Text = "";
+                tbUsernameCreate.Text = "";
+                pbPasswordCreate.Password = "";
+                pbPasswordCreateRepeat.Password = "";
+                lbTick.Content = "✔";
             }
         }
         private void Next1(object sender, RoutedEventArgs e)
@@ -130,6 +136,11 @@ namespace Hasznaltember
         private void Next2(object sender, RoutedEventArgs e)
         {
             pbPasswordCreateRepeat.Focus();
+        }
+
+        private void btnBackToMain_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

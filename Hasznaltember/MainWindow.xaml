@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hasznaltember"
         mc:Ignorable="d"
         Title="Használtember/bejelentkezés" Height="1080" Width="1920"
-        Background="#343A40" WindowState="Maximized">
+        Background="#343A40" WindowState="Maximized" WindowStyle="None">
     <Grid>
         <Label Content="Használtember" HorizontalAlignment="Left" Margin="528,134,0,0" VerticalAlignment="Top" Height="116" Width="636" FontSize="96px" FontStyle="Italic" Foreground="#ADB5BD"/>
         <Label Content="." HorizontalAlignment="Left" Margin="1124,-401,0,0" VerticalAlignment="Top" FontSize="500px" Height="774" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Foreground="#ADB5BD" />
@@ -75,5 +75,6 @@
         <PasswordBox x:Name="pbPassword" PasswordChanged="PasswordChangedHandler" Width="352" Height="45"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,574,0,0" Background="#343A40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16px" Opacity="0.5" BorderBrush="#343A40" Foreground="Black" BorderThickness="0"/>
         <Label x:Name="lbUsernameError" Content="" HorizontalAlignment="Left" Margin="1141,522,0,0" VerticalAlignment="Top" Width="542" Foreground="OrangeRed" FontSize="16px"/>
         <Label x:Name="lbPasswordError" Content="" HorizontalAlignment="Left" Margin="1141,587,0,0" VerticalAlignment="Top" Width="542" Foreground="OrangeRed" FontSize="16px"/>
+        <Button x:Name="btnExit" Foreground="#ADB5BD" Content="Kilépés" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="58" Width="144" FontSize="30px" Background="#343A40" BorderBrush="#343A40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="btnExit_Click"/>
     </Grid>
 </Window>
