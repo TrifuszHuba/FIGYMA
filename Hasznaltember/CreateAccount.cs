@@ -68,7 +68,7 @@ namespace Hasznaltember
                 valid = false;
                 lbNewUsernameError.Content = "Foglalt felhasználónév";
             }
-            catch (Exception a)
+            catch (Exception)
             {
                 lbNewUsernameError.Content = "";
                 valid = true;

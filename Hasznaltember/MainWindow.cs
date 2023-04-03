@@ -31,10 +31,6 @@ namespace Hasznaltember
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             bool valid = false;
-            Password = null;
-            Email = null;
-            Username = null;
-            Pass = null;
             try
             {
                 string[] row = File.ReadAllLines(@$"Z:\_IKT\hasznaltember.hu\Hasznaltember\adatok\{tbUsername.Text}.txt");
@@ -49,7 +45,7 @@ namespace Hasznaltember
                 lbPasswordError.Content = "";
                 valid = true;
             }
-            catch (Exception a)
+            catch (Exception)
             {
                 lbUsernameError.Content = "Hibás felhasználónév";
                 valid = false;

@@ -64,7 +64,7 @@ namespace Hasznaltember
                 lbUsernameError.Content = "";
                 valid = true;
             }
-            catch (Exception a)
+            catch (Exception)
             {
                 lbUsernameError.Content = "Nem regisztrált felhasználónév";
             }
