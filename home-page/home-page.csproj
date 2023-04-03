@@ -12,7 +12,6 @@
     <None Remove="52-528870_green-tick-clipart-benefit-green-check-mark-hd.png" />
     <None Remove="My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" />
     <None Remove="red-cross-mark-png-transparent-images-red-x-mark-transparent-11563359010asbhytefsx.png" />
-    <None Remove="samoyed.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,9 +22,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="red-cross-mark-png-transparent-images-red-x-mark-transparent-11563359010asbhytefsx.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="samoyed.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

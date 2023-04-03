@@ -22,10 +22,11 @@ namespace home_page
     public partial class MainWindow : Window
     {
         Random random = new Random();
+        List<Image> peopleImages = new List<Image>();
+        List<string> peopleBios = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
-            personDataWrite();
         }
         
         private void btnDropdown_Click(object sender, RoutedEventArgs e)
@@ -294,6 +295,10 @@ namespace home_page
             {
                 data.Add("disabled");
             }
+            else
+            {
+                data.Add(" ");
+            }
 
             if (age != "")
             {
@@ -309,17 +314,21 @@ namespace home_page
             {
                 File.WriteAllText("personData.txt", item + ";");
             }
+            //File.Open("image_generation.py");
+            //File.Open(".py")
+
+
+
+            for (int i = 0; i < 5; i++)
+            {
+                peopleImages.Add(new Image($"img{i}.jpg"));
+                peopleBios.Add($"bio{i}.txt");
+            }
+
+            picture.Source = peopleImages[0]; // image szopás
+
         }
 
-
-
-
-        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            Image image = sender as Image;
-            mainPicture.Source = image.Source;
-            image.Source = mainPicture.Source;
-        }
 
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
@@ -331,14 +340,14 @@ namespace home_page
 
         }
 
-        private void personDataWrite()
+        private void personDataWrite() // kell neki a fájl
         {
-            personData.Text = "On April 1st 1924 I've began to serve my sentence of imprisonment in the fortress of Landsberg am Lech, following the judgment of the Munich People's Court of that time. After years of uninterrupted labour, it was now possible for the first time to begin a work which has many had asked for, and I myself thought would be beneficial for the movement. So I decided to dedicate two volumes, not only for the movement, but also its development. \n Eddig tudom fejből XD";
+            personData.Text = "On April 1st 1924 I've began to serve my sentence of imprisonment in the fortress of Landsberg am Lech, following the judgment of the Munich People's Court of that time. After years of uninterrupted labour, it was now possible for the first time to begin a work which has many had asked for, and I myself thought would be beneficial for the movement. So I decided to dedicate two volumes, not only for the aims of our movement, but also its development. \n Eddig tudom fejből XD";
         }
 
         private void NObutton_Click(object sender, RoutedEventArgs e)
         {
-            // fuj
+            
         }
 
         private void YESbutton_Click(object sender, RoutedEventArgs e)
