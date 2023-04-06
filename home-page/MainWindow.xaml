@@ -9,7 +9,7 @@
         Title="Home" Height="1080" Width="1920"
         FontSize="36">
 
-    <Grid Height="1080" Width="1920">
+    <Grid x:Name="grid" Height="1080" Width="1920">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="*"/>
@@ -32,11 +32,11 @@
 
                 <StackPanel>
                     <Button x:Name="btnDropdownCondition" Content="Állapot" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
-                    <Button Content="Kitűnő" Visibility="Collapsed"/>
-                    <Button Content="Újszerű" Visibility="Collapsed"/>
-                    <Button Content="Megkímélt" Visibility="Collapsed"/>
-                    <Button Content="Sérülésmentes" Visibility="Collapsed"/>
-                    <Button Content="Sérült" Visibility="Collapsed"/>
+                    <Button Content="Kitűnő" Visibility="Collapsed" Click="borderBoldCondition_Click"/>
+                    <Button Content="Újszerű" Visibility="Collapsed" Click="borderBoldCondition_Click"/>
+                    <Button Content="Megkímélt" Visibility="Collapsed" Click="borderBoldCondition_Click"/>
+                    <Button Content="Sérülésmentes" Visibility="Collapsed" Click="borderBoldCondition_Click"/>
+                    <Button Content="Sérült" Visibility="Collapsed" Click="borderBoldCondition_Click"/>
                 </StackPanel>
 
                 <StackPanel>
@@ -100,8 +100,8 @@
 
                 <StackPanel>
                     <Button x:Name="btnDropdownBackground" Content="Ellenőrizhető előélet" Width="398" Height="55" FontWeight="Bold" Margin="0,10,0,15" Click="btnDropdown_Click"/>
-                    <Button x:Name="btnBackgroundYes" Content="Igen" Visibility="Collapsed"/>
-                    <Button x:Name="btnBackgroundNo" Content="Nem" Visibility="Collapsed"/>
+                    <Button x:Name="btnBackgroundYes" Content="Igen" Visibility="Collapsed" Click="borderBoldBackground_Click"/>
+                    <Button x:Name="btnBackgroundNo" Content="Nem" Visibility="Collapsed" Click="borderBoldBackground_Click"/>
                 </StackPanel>
 
                 <StackPanel>
@@ -121,53 +121,36 @@
                         <Button Background="Purple" Height="45" Width="45" Margin="5" Click="btnHairColorClick"/>
                         <Button Background="Black" Height="45" Width="45" Margin="5" Click="btnHairColorClick"/>
                     </StackPanel>
-                    <!--<Slider Name="pickerHair" Visibility="Collapsed" Width="398" Height="55" Maximum="255" VerticalAlignment="Center" Thumb.DragCompleted="pickerHair_DragCompleted">
-                      <Slider.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="White" Offset="0.05" />
-                                    <GradientStop Color="yellow" Offset="0.1428571428571429" />
-                                    <GradientStop Color="orange" Offset="0.2857142857142858" />
-                                    <GradientStop Color="red" Offset="0.4285714285714287" />
-                                    <GradientStop Color="Brown" Offset="0.5" />
-                                    <GradientStop Color="green" Offset="0.5714285714285716" />
-                                    <GradientStop Color="blue" Offset="0.7142857142857145" />
-                                    <GradientStop Color="violet" Offset="0.8571428571428574" />
-                                    <GradientStop Color="Black" Offset="0.95" />
-                                </LinearGradientBrush.GradientStops>
-                            </LinearGradientBrush>
-                      </Slider.Background>
-                    </Slider>-->
                 </StackPanel>
 
                 <StackPanel>
                     <Button x:Name="btnDropdownPapers" Content="Okmányok" Width="398" Height="55" Margin="0,10,0,15" FontWeight="Bold" Click="btnDropdown_Click"/>
-                    <Button Content="Magyar" Visibility="Collapsed"/>
-                    <Button Content="Külföldi" Visibility="Collapsed"/>
+                    <Button Content="Magyar" Visibility="Collapsed" Click="borderBoldPapers_Click"/>
+                    <Button Content="Külföldi" Visibility="Collapsed" Click="borderBoldPapers_Click"/>
                 </StackPanel>
 
                 <StackPanel>
                     <Button x:Name="btnDropdownLocation" Content="Földrajzi hely" FontWeight="Bold" Width="398" Height="55" Margin="0,10,0,15" Click="btnDropdown_Click"/>
-                    <Button Visibility="Collapsed" Content="Bács-Kiskun vármegye"/>
-                    <Button Visibility="Collapsed" Content="Baranya vármegye"/>
-                    <Button Visibility="Collapsed" Content="Békés vármegye"/>
-                    <Button Visibility="Collapsed" Content="Borsod Abaúj-Zemplén vármegye"/>
-                    <Button Visibility="Collapsed" Content="Csongrád-Csanád vármegye"/>
-                    <Button Visibility="Collapsed" Content="Fejér vármegye"/>
-                    <Button Visibility="Collapsed" Content="Győr-Moson-Sopron vármegye"/>
-                    <Button Visibility="Collapsed" Content="Hajdú-Bihar vármegye"/>
-                    <Button Visibility="Collapsed" Content="Heves vármegye"/>
-                    <Button Visibility="Collapsed" Content="Jász-nagykun-Szolnok vármegye"/>
-                    <Button Visibility="Collapsed" Content="Komárom-Esztergom vármegye"/>
-                    <Button Visibility="Collapsed" Content="Nógrád vármegye"/>
-                    <Button Visibility="Collapsed" Content="Pest vármegye"/>
-                    <Button Visibility="Collapsed" Content="Somogy vármegye"/>
-                    <Button Visibility="Collapsed" Content="Szabolcs-Szatmár-Bereg vármegye"/>
-                    <Button Visibility="Collapsed" Content="Tolna vármegye"/>
-                    <Button Visibility="Collapsed" Content="Vas vármegye"/>
-                    <Button Visibility="Collapsed" Content="Veszprém vármegye"/>
-                    <Button Visibility="Collapsed" Content="Zala vármegye"/>
-                    <Button Visibility="Collapsed" Content="Tét (Bajusz Királyság)"/>
+                    <Button Visibility="Collapsed" Content="Bács-Kiskun vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Baranya vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Békés vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Borsod Abaúj-Zemplén vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Csongrád-Csanád vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Fejér vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Győr-Moson-Sopron vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Hajdú-Bihar vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Heves vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Jász-nagykun-Szolnok vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Komárom-Esztergom vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Nógrád vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Pest vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Somogy vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Szabolcs-Szatmár-Bereg vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Tolna vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Vas vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Veszprém vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Zala vármegye" Click="borderBoldLocation_Click"/>
+                    <Button Visibility="Collapsed" Content="Tét (Bajusz Királyság)" Click="borderBoldLocation_Click"/>
                 </StackPanel>
 
                 <Button x:Name="searchButton" Content="Keresés" Width="380" Height="70" Margin="0,110" Click="searchButton_Click">
@@ -181,19 +164,17 @@
         </ScrollViewer>
 
 
-        <Image x:Name="picture" Grid.Column="1" HorizontalAlignment="Left" Height="800" Width="550" Margin="170,64,0,266" Source="/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" Stretch="UniformToFill"/>
-        <Button x:Name="NObutton" Grid.Column="1" HorizontalAlignment="Left" Margin="260,918,0,0" VerticalAlignment="Top" Width="120" Height="120" Click="NObutton_Click">
-            <Image Source="/red-cross-mark-png-transparent-images-red-x-mark-transparent-11563359010asbhytefsx.png"/>
-            <!--alt: puke emoji-->
+        <Image x:Name="picture" Grid.Column="1" HorizontalAlignment="Left" Height="800" Width="550" Margin="170,64,0,266" Stretch="UniformToFill"/>
+        <Button x:Name="NObutton" Grid.Column="1" HorizontalAlignment="Left" Margin="260,918,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#343A40" BorderThickness="0" Click="NObutton_Click">
+            <Image Source="/cross.png"/>
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="60"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="YESbutton" Grid.Column="1" HorizontalAlignment="Left" Margin="510,918,0,0" VerticalAlignment="Top" Width="120" Height="120" Click="YESbutton_Click">
-            <Image Source="/52-528870_green-tick-clipart-benefit-green-check-mark-hd.png"/>
-            <!--alt: horny emoji-->
+        <Button x:Name="YESbutton" Grid.Column="1" HorizontalAlignment="Left" Margin="510,918,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#343A40" BorderThickness="0" Click="YESbutton_Click">
+            <Image Source="/tick.png"/>
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="60"/>

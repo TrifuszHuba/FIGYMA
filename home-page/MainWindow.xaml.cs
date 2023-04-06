@@ -16,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
+using Image = System.Windows.Controls.Image;
 
 namespace home_page
 {
@@ -28,7 +30,7 @@ namespace home_page
         {
             InitializeComponent();
         }
-        
+
         private void btnDropdown_Click(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
@@ -47,6 +49,84 @@ namespace home_page
                     parent.Children[i].Visibility = Visibility.Collapsed;
                 }
             }
+        }
+
+        Button buttonCondition;
+        private void borderBoldCondition_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            b.BorderThickness = new Thickness(5);
+            b.BorderBrush = Brushes.Black;
+            if (buttonCondition != null && buttonCondition != b)
+            {
+                buttonCondition.BorderThickness = new Thickness(1);
+            }
+            buttonCondition = b;
+        }
+
+        Button buttonWeight;
+        private void borderBoldWeight_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            b.BorderThickness = new Thickness(5);
+            b.BorderBrush = Brushes.Black;
+            if (buttonWeight != null && buttonWeight != b)
+            {
+                buttonWeight.BorderThickness = new Thickness(1);
+            }
+            buttonWeight = b;
+        }
+
+        Button buttonBackground;
+        private void borderBoldBackground_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            b.BorderThickness = new Thickness(5);
+            b.BorderBrush = Brushes.Black;
+            if (buttonBackground != null && buttonBackground != b)
+            {
+                buttonBackground.BorderThickness = new Thickness(1);
+            }
+            buttonBackground = b;
+        }
+
+        Button buttonHair;
+        private void borderBoldHair_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            b.BorderThickness = new Thickness(5);
+            b.BorderBrush = Brushes.Black;
+            if (buttonHair != null && buttonHair != b)
+            {
+                buttonHair.BorderThickness = new Thickness(1);
+            }
+            buttonHair = b;
+        }
+
+        Button buttonPapers;
+        private void borderBoldPapers_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            b.BorderThickness = new Thickness(5);
+            b.BorderBrush = Brushes.Black;
+            if (buttonPapers != null && buttonPapers != b)
+            {
+                buttonPapers.BorderThickness = new Thickness(1);
+            }
+            buttonPapers = b;
+        }
+
+        Button buttonLocation;
+        private void borderBoldLocation_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            b.BorderThickness = new Thickness(5);
+            b.BorderBrush = Brushes.Black;
+            if (buttonLocation != null && buttonLocation != b)
+            {
+                buttonLocation.BorderThickness = new Thickness(1);
+            }
+            buttonLocation = b;
         }
 
         int weight;
@@ -68,6 +148,7 @@ namespace home_page
             {
                 weight = 300;
             }
+            borderBoldWeight_Click(sender,e);
         }
 
         int minHeight = 0;
@@ -225,7 +306,11 @@ namespace home_page
             int now = DateTime.Now.Year;
             int year = random.Next(minYear, maxYear+1);
 
-            if (now - year >= 18 && now - year <= 25)
+            if (now - year < 18)
+            {
+                age = "teenager";
+            }
+            else if (now - year >= 18 && now - year <= 25)
             {
                 age = "young adult";
             }
@@ -248,12 +333,14 @@ namespace home_page
 
         }
 
+
         string hairColor = "";
         private void btnHairColorClick(object sender, RoutedEventArgs e) 
         {
             Button b = sender as Button;
             System.Drawing.Color col = ColorTranslator.FromHtml(b.Background.ToString());
             hairColor = col.Name.ToLower();
+            borderBoldHair_Click(sender,e);
         }
 
         private void searchButton_Click(object sender, RoutedEventArgs e)
@@ -321,38 +408,53 @@ namespace home_page
 
             for (int i = 0; i < 5; i++)
             {
-                peopleImages.Add(new Image($"img{i}.jpg"));
+                Image img = new Image();
+                img.Source = new BitmapImage(new Uri($"image{i}.jpg", UriKind.Relative));
+                peopleImages.Add(img);
                 peopleBios.Add($"bio{i}.txt");
             }
 
-            picture.Source = peopleImages[0]; // image szopás
-
+            picture.Source = peopleImages[0].Source;
+            pictureIndex= 0;
+            bioIndex= 0;
+            personDataWrite();
         }
 
-
+        int pictureIndex;
+        int bioIndex;
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
-
+            picture.Source = peopleImages[pictureIndex-1].Source;
+            bioIndex--;
+            personDataWrite();
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-
+            picture.Source = peopleImages[pictureIndex + 1].Source;
+            bioIndex++;
+            personDataWrite();
         }
 
-        private void personDataWrite() // kell neki a fájl
+        private void personDataWrite()
         {
-            personData.Text = "On April 1st 1924 I've began to serve my sentence of imprisonment in the fortress of Landsberg am Lech, following the judgment of the Munich People's Court of that time. After years of uninterrupted labour, it was now possible for the first time to begin a work which has many had asked for, and I myself thought would be beneficial for the movement. So I decided to dedicate two volumes, not only for the aims of our movement, but also its development. \n Eddig tudom fejből XD";
+            string bio = File.ReadAllLines($"bio{bioIndex}.txt").ToString();
+            personData.Text = bio;
         }
 
         private void NObutton_Click(object sender, RoutedEventArgs e)
         {
-            
+            //remove from list, call next()
         }
 
         private void YESbutton_Click(object sender, RoutedEventArgs e)
         {
-            // Weöres Sándor: Baszás, szex, kúrás
+            Border border = new Border();
+            border.BorderThickness = new Thickness(4);
+            border.BorderBrush = Brushes.Green;
+            grid.Children.Remove(picture); // 'picture already logical cild of another element' error
+            border.Child = picture;
+            grid.Children.Add(border);
         }
     }
 }
