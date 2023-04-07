@@ -404,8 +404,6 @@ namespace home_page
             //File.Open("image_generation.py");
             //File.Open(".py")
 
-
-
             for (int i = 0; i < 5; i++)
             {
                 Image img = new Image();
@@ -424,15 +422,29 @@ namespace home_page
         int bioIndex;
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
-            picture.Source = peopleImages[pictureIndex-1].Source;
-            bioIndex--;
+            if (bioIndex > 0)
+            {
+                picture.Source = peopleImages[pictureIndex-1].Source;
+                bioIndex--;
+            }
+            else
+            {
+                picture.Source = peopleImages[peopleImages.Count-1].Source;
+            }
             personDataWrite();
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            picture.Source = peopleImages[pictureIndex + 1].Source;
-            bioIndex++;
+            if (bioIndex < peopleBios.Count-1)
+            {
+                picture.Source = peopleImages[pictureIndex + 1].Source;
+                bioIndex++;
+            }
+            else
+            {
+                picture.Source = peopleImages[0].Source;
+            }
             personDataWrite();
         }
 
@@ -444,15 +456,19 @@ namespace home_page
 
         private void NObutton_Click(object sender, RoutedEventArgs e)
         {
-            //remove from list, call next()
+            peopleImages.Remove(peopleImages[pictureIndex]);
+            peopleBios.Remove(peopleBios[bioIndex]);
+            pictureIndex--;
+            bioIndex--;
+            nextButton_Click(nextButton,null);
         }
 
-        private void YESbutton_Click(object sender, RoutedEventArgs e)
+        private void YESbutton_Click(object sender, RoutedEventArgs e) // may be good if we have a picture there
         {
             Border border = new Border();
             border.BorderThickness = new Thickness(4);
             border.BorderBrush = Brushes.Green;
-            grid.Children.Remove(picture); // 'picture already logical cild of another element' error
+            grid.Children.Remove(picture);
             border.Child = picture;
             grid.Children.Add(border);
         }
