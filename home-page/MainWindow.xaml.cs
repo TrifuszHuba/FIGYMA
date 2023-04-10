@@ -463,14 +463,15 @@ namespace home_page
             nextButton_Click(nextButton,null);
         }
 
-        private void YESbutton_Click(object sender, RoutedEventArgs e) // may be good if we have a picture there
+        private void YESbutton_Click(object sender, RoutedEventArgs e)
         {
-            Border border = new Border();
-            border.BorderThickness = new Thickness(4);
-            border.BorderBrush = Brushes.Green;
-            grid.Children.Remove(picture);
-            border.Child = picture;
-            grid.Children.Add(border);
+            // on click green border around image
+            int rnd2 = random.Next(1,101);
+            if (rnd2 < 11)
+            {
+                MessageBox.Show("IT'S A MATCH!"); // customise a bit
+                // border of hearts
+            }
         }
     }
 }
