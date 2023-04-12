@@ -413,63 +413,77 @@ namespace home_page
             }
 
             picture.Source = peopleImages[0].Source;
-            pictureIndex= 0;
-            bioIndex= 0;
+            index= 0;
             personDataWrite();
         }
 
-        int pictureIndex;
-        int bioIndex;
+        int index;
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
-            if (bioIndex > 0)
+            if (index > 0)
             {
-                picture.Source = peopleImages[pictureIndex-1].Source;
-                bioIndex--;
+                picture.Source = peopleImages[index-1].Source;
+                index--;
             }
             else
             {
                 picture.Source = peopleImages[peopleImages.Count-1].Source;
             }
             personDataWrite();
+            if (greenBorder != null)
+            {
+                greenBorder.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                greenBorder.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            if (bioIndex < peopleBios.Count-1)
+            if (index < peopleBios.Count-1)
             {
-                picture.Source = peopleImages[pictureIndex + 1].Source;
-                bioIndex++;
+                picture.Source = peopleImages[index + 1].Source;
+                index++;
             }
             else
             {
                 picture.Source = peopleImages[0].Source;
             }
             personDataWrite();
+            if (greenBorder != null)
+            {
+                greenBorder.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                greenBorder.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void personDataWrite()
         {
-            string bio = File.ReadAllLines($"bio{bioIndex}.txt").ToString();
+            string bio = File.ReadAllLines($"bio{index}.txt").ToString();
             personData.Text = bio;
         }
 
         private void NObutton_Click(object sender, RoutedEventArgs e)
         {
-            peopleImages.Remove(peopleImages[pictureIndex]);
-            peopleBios.Remove(peopleBios[bioIndex]);
-            pictureIndex--;
-            bioIndex--;
+            peopleImages.Remove(peopleImages[index]);
+            peopleBios.Remove(peopleBios[index]);
+            index--;
             nextButton_Click(nextButton,null);
         }
 
         private void YESbutton_Click(object sender, RoutedEventArgs e)
         {
-            // on click green border around image
             int rnd2 = random.Next(1,101);
-            if (rnd2 < 11)
+            if (rnd2 < 6)
             {
-                MessageBox.Show("IT'S A MATCH!"); // customise a bit
+                MessageBox.Show("IT'S A MATCH!");
+                greenBorder.Margin = new Thickness(picture.Margin.Left - 2, picture.Margin.Top - 2, 0, 0);
+                greenBorder.Visibility = Visibility.Visible;
                 // border of hearts
             }
         }
