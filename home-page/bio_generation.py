@@ -1,7 +1,7 @@
 import os
 import openai
 
-api_key = open("api_key.txt", "r", encoding="utf-8").read()
+api_key = open("/api_key.txt", "r", encoding="utf-8").read()
 
 openai.api_key = api_key
 

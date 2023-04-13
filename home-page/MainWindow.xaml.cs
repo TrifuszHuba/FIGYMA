@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -401,15 +402,24 @@ namespace home_page
             {
                 File.WriteAllText("personData.txt", item + ";");
             }
-            //File.Open("image_generation.py");
-            //File.Open(".py")
+
+            Process process = new Process();
+            process.StartInfo.FileName = "python";
+            process.StartInfo.Arguments = "/image_generation.py";
+            process.Start();
+            process.WaitForExit();
+
+            process.StartInfo.FileName = "python";
+            process.StartInfo.Arguments = "/bio_generation.py";
+            process.Start();
+            process.WaitForExit();
 
             for (int i = 0; i < 5; i++)
             {
                 Image img = new Image();
-                img.Source = new BitmapImage(new Uri($"image{i}.jpg", UriKind.Relative));
+                img.Source = new BitmapImage(new Uri($"/image{i}.jpg", UriKind.Relative));
                 peopleImages.Add(img);
-                peopleBios.Add($"bio{i}.txt");
+                peopleBios.Add($"/bio{i}.txt");
             }
 
             picture.Source = peopleImages[0].Source;
@@ -464,7 +474,7 @@ namespace home_page
 
         private void personDataWrite()
         {
-            string bio = File.ReadAllLines($"bio{index}.txt").ToString();
+            string bio = File.ReadAllLines($"/bio{index}.txt").ToString();
             personData.Text = bio;
         }
 
@@ -479,7 +489,7 @@ namespace home_page
         private void YESbutton_Click(object sender, RoutedEventArgs e)
         {
             int rnd2 = random.Next(1,101);
-            if (rnd2 < 6)
+            if (rnd2 < 100)
             {
                 MessageBox.Show("IT'S A MATCH!");
                 greenBorder.Margin = new Thickness(picture.Margin.Left - 2, picture.Margin.Top - 2, 0, 0);

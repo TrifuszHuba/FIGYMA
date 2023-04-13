@@ -1675,7 +1675,7 @@
         </ScrollViewer>
 
             <Border x:Name="greenBorder" BorderBrush="Green" BorderThickness="6" Visibility="Collapsed"/>
-            <Image x:Name="picture" Grid.Column="1" HorizontalAlignment="Left" Height="800" Width="550" Margin="170,64,0,266" Stretch="UniformToFill" Visibility="Visible" Source="/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg" />
+            <Image x:Name="picture" Grid.Column="1" Source="" HorizontalAlignment="Left" Height="800" Width="550" Margin="170,64,0,266" Stretch="UniformToFill" Visibility="Visible"/>
             <Button x:Name="NObutton" Grid.Column="1" HorizontalAlignment="Left" Margin="260,918,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#343A40" BorderThickness="0" Click="NObutton_Click">
             <Image Source="/cross.png"/>
             <Button.Style>

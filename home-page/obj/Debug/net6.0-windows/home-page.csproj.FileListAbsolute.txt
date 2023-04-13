@@ -103,3 +103,24 @@ Z:\11. évf._2022-2023\Javascript&IKT\hasznyltcigany\home-page\obj\Debug\net6.0-
 Z:\11. évf._2022-2023\Javascript&IKT\hasznyltcigany\home-page\obj\Debug\net6.0-windows\home-page.pdb
 Z:\11. évf._2022-2023\Javascript&IKT\hasznyltcigany\home-page\obj\Debug\net6.0-windows\home-page.genruntimeconfig.cache
 Z:\11. évf._2022-2023\Javascript&IKT\hasznyltcigany\home-page\obj\Debug\net6.0-windows\ref\home-page.dll
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\home-page.csproj.AssemblyReference.cache
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\home-page_MarkupCompile.cache
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\home-page_MarkupCompile.lref
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\home-page.dll
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\refint\home-page.dll
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\home-page.pdb
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\bin\Debug\net6.0-windows\home-page.exe
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\bin\Debug\net6.0-windows\home-page.deps.json
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\bin\Debug\net6.0-windows\home-page.runtimeconfig.json
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\bin\Debug\net6.0-windows\home-page.dll
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\bin\Debug\net6.0-windows\home-page.pdb
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\home-page.g.resources
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\home-page.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\home-page.AssemblyInfoInputs.cache
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\home-page.AssemblyInfo.cs
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\home-page.csproj.CoreCompileInputs.cache
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\home-page.genruntimeconfig.cache
+C:\Users\varga\Desktop\hasznaltemeebr\home-page\obj\Debug\net6.0-windows\ref\home-page.dll
