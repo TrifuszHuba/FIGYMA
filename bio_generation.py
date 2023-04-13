@@ -1,9 +1,7 @@
 import os
 import openai
 
-api_key = open("api_key.txt", "r", encoding="utf-8").read()
-
-openai.api_key = api_key
+openai.api_key = open("api_key.txt", "r", encoding="utf-8").read()
 
 response = openai.Completion.create(
     model="text-davinci-003",
