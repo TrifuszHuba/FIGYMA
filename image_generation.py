@@ -3,14 +3,15 @@ import openai
 import requests
 import base64
 
-file = open('test_options.txt', 'r')
-input = file.read()
-file.close()
+description_file = open('personData_description.txt', 'r')
+description = description_file.read().replace(' ', '').split(';')
+while ("" in description):
+    description.remove("")
 
+input = f"A {description[1]}, {description[2]}, {description[3]}, {description[4]}, {description[5]}, {description[0]} with {description[6]} hair"
 
 try:
-    api_key = open("api_key.txt", "r", encoding="utf-8").read()
-    openai.api_key = api_key
+    openai.api_key = open("api_key.txt", "r", encoding="utf-8").read()
     response = openai.Image.create(
         prompt=input,
         n=5,
@@ -29,3 +30,7 @@ except openai.error.AuthenticationError:
 
 except:
     print("Unknown error has occured.")
+
+# gender; height; body type; race; (disabled); age; hair color;
+# male; short; well-built; white; disabled; young; black;
+# personData_description.txt
