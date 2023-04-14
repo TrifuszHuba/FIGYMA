@@ -3,17 +3,22 @@ import openai
 import requests
 import base64
 
-description_file = open('/bin/Debug/net6.0-windows/personData.txt', 'r')
-description = description_file.read().replace(' ', '').split(';')
-while ("" in description):
-    description.remove("")
-
-inputData = f"A {description[1]}, {description[2]}, {description[3]}, {description[4]}, {description[5]}, {description[0]} with {description[6]} hair"
+description_file = open('C:\Users\varga\Desktop\hasznaltember.eu\home-page\bin\Debug\net6.0-windows\personData.txt', 'r')
+description = description_file.read().split('\n')
+input = f"A {description[1]}, {description[2]}, {description[3]}, {description[4]}, {description[5]}, {description[0]} with {description[6]} hair"
+edited_input = ""
+i=0
+while i < len(input):
+    if i < len(input) - 1 and input[i] == " " and input[i + 1] == ",":
+        i += 2
+    else:
+        edited_input += input[i]
+        i += 1
 
 try:
     openai.api_key = open("/api_key.txt", "r", encoding="utf-8").read()
     response = openai.Image.create(
-        prompt=inputData,
+        prompt=edited_input,
         n=5,
         size="1024x1024",
         response_format="b64_json"

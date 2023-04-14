@@ -363,22 +363,9 @@ namespace home_page
             {
                 data.Add("human");
             }
-
-            if (heightForAI != "")
-            {
                 data.Add(heightForAI);
-            }
-
-            if (bodyTypeFromBMI != "")
-            {
                 data.Add(bodyTypeFromBMI);
-            }
-
-            if (modelPickerColor != "")
-            {
                 data.Add(modelPickerColor);
-            }
-
             if (int.Parse(tbLimbs.Text) < 4)
             {
                 data.Add("disabled");
@@ -387,21 +374,10 @@ namespace home_page
             {
                 data.Add(" ");
             }
+            data.Add(age);
+            data.Add(hairColor);
 
-            if (age != "")
-            {
-                data.Add(age);
-            }
-
-            if (hairColor != "")
-            {
-                data.Add(hairColor);
-            }
-
-            foreach (var item in data)
-            {
-                File.WriteAllText("personData.txt", item + ";");
-            }
+            File.WriteAllLines("personData.txt", data);
 
             Process process = new Process();
             process.StartInfo.FileName = "python";

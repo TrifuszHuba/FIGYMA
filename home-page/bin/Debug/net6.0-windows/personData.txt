@@ -1,1 +1,7 @@
-brown;
+man
+tall
+obese
+black
+ 
+middle aged
+brown

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\11. évf._2022-2023\\Javascript&IKT\\hasznaltember\\home-page\\home-page.csproj": {}
+    "C:\\Users\\varga\\Desktop\\hasznaltember.eu\\home-page\\home-page.csproj": {}
   },
   "projects": {
-    "Z:\\11. évf._2022-2023\\Javascript&IKT\\hasznaltember\\home-page\\home-page.csproj": {
+    "C:\\Users\\varga\\Desktop\\hasznaltember.eu\\home-page\\home-page.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\11. évf._2022-2023\\Javascript&IKT\\hasznaltember\\home-page\\home-page.csproj",
+        "projectUniqueName": "C:\\Users\\varga\\Desktop\\hasznaltember.eu\\home-page\\home-page.csproj",
         "projectName": "home-page",
-        "projectPath": "Z:\\11. évf._2022-2023\\Javascript&IKT\\hasznaltember\\home-page\\home-page.csproj",
-        "packagesPath": "C:\\Users\\varga.mate.gellert\\.nuget\\packages\\",
-        "outputPath": "Z:\\11. évf._2022-2023\\Javascript&IKT\\hasznaltember\\home-page\\obj\\",
+        "projectPath": "C:\\Users\\varga\\Desktop\\hasznaltember.eu\\home-page\\home-page.csproj",
+        "packagesPath": "C:\\Users\\varga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\varga\\Desktop\\hasznaltember.eu\\home-page\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\varga.mate.gellert\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\varga\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
