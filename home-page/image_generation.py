@@ -3,7 +3,7 @@ import openai
 import requests
 import base64
 
-description_file = open('/personData.txt', 'r')
+description_file = open('/bin/Debug/net6.0-windows/personData.txt', 'r')
 description = description_file.read().replace(' ', '').split(';')
 while ("" in description):
     description.remove("")

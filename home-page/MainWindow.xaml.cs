@@ -422,9 +422,12 @@ namespace home_page
                 peopleBios.Add($"/bio{i}.txt");
             }
 
-            picture.Source = peopleImages[0].Source;
-            index= 0;
-            personDataWrite();
+            if (peopleImages[0] != null)
+            {
+                picture.Source = peopleImages[0].Source;
+                index= 0;
+            }
+            //personDataWrite();
         }
 
         int index;
@@ -439,7 +442,7 @@ namespace home_page
             {
                 picture.Source = peopleImages[peopleImages.Count-1].Source;
             }
-            personDataWrite();
+            //personDataWrite();
             if (greenBorder != null)
             {
                 greenBorder.Visibility = Visibility.Visible;
@@ -461,7 +464,7 @@ namespace home_page
             {
                 picture.Source = peopleImages[0].Source;
             }
-            personDataWrite();
+            //personDataWrite();
             if (greenBorder != null)
             {
                 greenBorder.Visibility = Visibility.Visible;
@@ -489,7 +492,7 @@ namespace home_page
         private void YESbutton_Click(object sender, RoutedEventArgs e)
         {
             int rnd2 = random.Next(1,101);
-            if (rnd2 < 100)
+            if (rnd2 < 6)
             {
                 MessageBox.Show("IT'S A MATCH!");
                 greenBorder.Margin = new Thickness(picture.Margin.Left - 2, picture.Margin.Top - 2, 0, 0);
