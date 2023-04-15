@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,6 +20,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static System.Net.Mime.MediaTypeNames;
 using Image = System.Windows.Controls.Image;
+using Path = System.IO.Path;
 
 namespace home_page
 {
@@ -389,34 +391,35 @@ namespace home_page
             process.StartInfo.Arguments = "/bio_generation.py";
             process.Start();
             process.WaitForExit();
+            //Thread.Sleep(10000);
 
             for (int i = 0; i < 5; i++)
             {
                 Image img = new Image();
-                img.Source = new BitmapImage(new Uri($"/image{i}.jpg", UriKind.Relative));
+                img.Source = new BitmapImage(new Uri($"image{i}.jpg", UriKind.Relative));
                 peopleImages.Add(img);
-                peopleBios.Add($"/bio{i}.txt");
+                peopleBios.Add($"bio{i}.txt");
             }
-
-            if (peopleImages[0] != null)
-            {
-                picture.Source = peopleImages[0].Source;
-                index= 0;
-            }
+            imagePath = Path.GetFullPath($"image0.jpg");
+            picture.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
+            index = 0;
             //personDataWrite();
         }
 
         int index;
+        string imagePath;
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
             if (index > 0)
             {
-                picture.Source = peopleImages[index-1].Source;
+                imagePath = Path.GetFullPath(peopleImages[index - 1].Source.ToString());
+                picture.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
                 index--;
             }
             else
             {
-                picture.Source = peopleImages[peopleImages.Count-1].Source;
+                imagePath = Path.GetFullPath(peopleImages[peopleImages.Count - 1].Source.ToString());
+                picture.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
             }
             //personDataWrite();
             if (greenBorder != null)
@@ -433,12 +436,14 @@ namespace home_page
         {
             if (index < peopleBios.Count-1)
             {
-                picture.Source = peopleImages[index + 1].Source;
+                imagePath = Path.GetFullPath(peopleImages[index + 1].Source.ToString());
+                picture.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
                 index++;
             }
             else
             {
-                picture.Source = peopleImages[0].Source;
+                imagePath = Path.GetFullPath(peopleImages[0].Source.ToString());
+                picture.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
             }
             //personDataWrite();
             if (greenBorder != null)
@@ -453,7 +458,8 @@ namespace home_page
 
         private void personDataWrite()
         {
-            string bio = File.ReadAllLines($"/bio{index}.txt").ToString();
+            string filePath = Path.GetFullPath($"bio{index}.txt");
+            string bio = File.ReadAllLines(filePath).ToString();
             personData.Text = bio;
         }
 
@@ -468,12 +474,14 @@ namespace home_page
         private void YESbutton_Click(object sender, RoutedEventArgs e)
         {
             int rnd2 = random.Next(1,101);
-            if (rnd2 < 6)
+            greenBorder.Margin = new Thickness(picture.Margin.Left - 2, picture.Margin.Top - 2, 0, 0);
+            greenBorder.Visibility = Visibility.Visible;
+            if (rnd2 < 80)
             {
                 MessageBox.Show("IT'S A MATCH!");
-                greenBorder.Margin = new Thickness(picture.Margin.Left - 2, picture.Margin.Top - 2, 0, 0);
-                greenBorder.Visibility = Visibility.Visible;
-                // border of hearts
+                greenBorder.BorderThickness = new Thickness(15);
+                greenBorder.BorderBrush = Brushes.LightPink;
+                greenBorder.CornerRadius = new CornerRadius(40);
             }
         }
     }

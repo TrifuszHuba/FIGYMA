@@ -3,7 +3,7 @@ import openai
 import requests
 import base64
 
-description_file = open('C:\Users\varga\Desktop\hasznaltember.eu\home-page\bin\Debug\net6.0-windows\personData.txt', 'r')
+description_file = open('/bin/Debug/net6.0-windows/personData.txt', 'r')
 description = description_file.read().split('\n')
 input = f"A {description[1]}, {description[2]}, {description[3]}, {description[4]}, {description[5]}, {description[0]} with {description[6]} hair"
 edited_input = ""
@@ -35,7 +35,3 @@ except openai.error.AuthenticationError:
 
 except:
     print("Unknown error has occured.")
-
-# gender; height; body type; race; (disabled); age; hair color;
-# male; short; well-built; white; disabled; young; black;
-# personData_description.txt
