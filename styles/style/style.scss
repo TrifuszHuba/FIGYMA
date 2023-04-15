@@ -78,7 +78,7 @@ html {
             flex-direction: column;
             margin-bottom: 20vh;
 
-            .colleagues {
+            .block {
                 display: flex;
                 flex-direction: column;
                 text-align: center;
@@ -88,6 +88,9 @@ html {
                     margin: 5vw;
                     font-size: 3vw;
                 }
+            }
+
+            .colleagues {
 
                 .right_facing {
                     flex-direction: row-reverse !important; 
@@ -135,6 +138,21 @@ html {
                         }
                     }
                 }
+            }
+
+            .project {
+                margin-top: 8vw;
+
+                p {
+                    font-size: 1vw;
+                }
+
+                img {
+                    width: 5vw;
+                    padding-left: 0.6vw;
+                    padding-right: 0.6vw;
+                }
+
             }
         }
     }

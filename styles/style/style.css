@@ -66,13 +66,13 @@ html body .content {
   flex-direction: column;
   margin-bottom: 20vh;
 }
-html body .content .colleagues {
+html body .content .block {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
 }
-html body .content .colleagues h1 {
+html body .content .block h1 {
   margin: 5vw;
   font-size: 3vw;
 }
@@ -115,4 +115,15 @@ html body .content .colleagues .colleague .colleague_description ul {
 }
 html body .content .colleagues .colleague .colleague_description ul li {
   list-style: square;
+}
+html body .content .project {
+  margin-top: 8vw;
+}
+html body .content .project p {
+  font-size: 1vw;
+}
+html body .content .project img {
+  width: 5vw;
+  padding-left: 0.6vw;
+  padding-right: 0.6vw;
 }/*# sourceMappingURL=style.css.map */
