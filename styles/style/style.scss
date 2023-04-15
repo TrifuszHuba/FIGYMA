@@ -16,19 +16,25 @@ $font_family: 'Outfit', sans-serif;
     }
 }
 
+@keyframes fade_in {
+    to {
+        transform: translateY(-2vw);
+        opacity: 1;
+    }
+}
+
 * {
     padding: 0;
     margin: 0;
 }
 
 .in_view {
-    opacity: 1 !important;
-    transform: translateY(0px);
+    animation: fade_in 0.5s forwards;
 }
 
 .block {
     opacity: 0;
-    transform: translateY(-4vw);
+    transform: translateY(0vw);
 }
 
 html {
@@ -151,16 +157,14 @@ html {
             }
 
             .project {
-                margin-top: 8vw;
 
                 p {
-                    font-size: 1vw;
+                    font-size: 1.1vw;
                 }
 
                 img {
                     width: 5vw;
-                    padding-left: 0.6vw;
-                    padding-right: 0.6vw;
+                    padding: 0.8vw;
                 }
 
             }
