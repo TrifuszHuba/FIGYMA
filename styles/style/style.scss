@@ -21,6 +21,16 @@ $font_family: 'Outfit', sans-serif;
     margin: 0;
 }
 
+.in_view {
+    opacity: 1 !important;
+    transform: translateY(0px);
+}
+
+.block {
+    opacity: 0;
+    transform: translateY(-4vw);
+}
+
 html {
     overflow-x: hidden;
 
@@ -93,7 +103,7 @@ html {
             .colleagues {
 
                 .right_facing {
-                    flex-direction: row-reverse !important; 
+                    flex-direction: row-reverse !important;
                     color: $background_color;
                     background-color: #fff;
                     box-shadow: inset 0vw 0.5vw 1vw #797979, inset 0vw -0.5vw 1vw #797979;
