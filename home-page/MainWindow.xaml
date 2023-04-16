@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Background="#343A40"
         Title="Home" Height="1080" Width="1920"
-        FontSize="36">
+        FontSize="36"
+        WindowState="Maximized"
+        WindowStyle="None">
 
     <Grid x:Name="grid" Height="1080" Width="1920">
         <Grid.ColumnDefinitions>
@@ -1666,18 +1668,25 @@
                         </Style>
                     </Button.Style>
                     <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="15"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </StackPanel>
         </ScrollViewer>
 
-        <Border x:Name="greenBorder" BorderBrush="Green" BorderThickness="6" Visibility="Collapsed"/>
-        <Image x:Name="picture" Grid.Column="1" Source="" HorizontalAlignment="Left" Height="800" Width="550" Margin="170,64,0,266" Stretch="UniformToFill" Visibility="Visible"/>
-            <Button x:Name="NObutton" Grid.Column="1" HorizontalAlignment="Left" Margin="260,918,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#343A40" BorderThickness="0" Click="NObutton_Click">
-            <Image Source="/cross.png"/>
+        <Border x:Name="whiteBorder" BorderBrush="White" BorderThickness="6" Visibility="Visible" Grid.Column="1" Margin="164,58,794,210"/>
+        <Canvas x:Name="canvasImages">
+            <Image x:Name="picture0" Source="/img0_perm.jpg" Grid.Column="1" HorizontalAlignment="Left" Height="800" Width="550" Stretch="UniformToFill" Visibility="Visible" Canvas.Left="570" Canvas.Top="64"/>
+            <Image x:Name="picture1" Source="/img1_perm.jpg" Grid.Column="1" HorizontalAlignment="Left" Height="800" Width="550" Stretch="UniformToFill" Visibility="Hidden" Canvas.Left="570" Canvas.Top="64"/>
+            <Image x:Name="picture2" Source="/img2_perm.jpg" Grid.Column="1" HorizontalAlignment="Left" Height="800" Width="550" Stretch="UniformToFill" Visibility="Hidden" Canvas.Left="570" Canvas.Top="64"/>
+            <Image x:Name="picture3" Source="/img3_perm.jpg" Grid.Column="1" HorizontalAlignment="Left" Height="800" Width="550" Stretch="UniformToFill" Visibility="Hidden" Canvas.Left="570" Canvas.Top="64"/>
+            <Image x:Name="picture4" Source="/img4_perm.jpg" Grid.Column="1" HorizontalAlignment="Left" Height="800" Width="550" Stretch="UniformToFill" Visibility="Hidden" Canvas.Left="570" Canvas.Top="64"/>
+        </Canvas>
+
+        <Button x:Name="NObutton" Grid.Column="1" HorizontalAlignment="Left" Margin="260,918,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#343A40" BorderThickness="0" Click="NObutton_Click">
+            <Image Source="/close.png"/>
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Template">
@@ -1707,8 +1716,8 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="YESbutton" Grid.Column="1" HorizontalAlignment="Left" Margin="510,918,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#343A40" BorderThickness="0" Click="YESbutton_Click">
-            <Image Source="/tick.png"/>
+        <Button x:Name="YESbutton" Grid.Column="1" HorizontalAlignment="Left" Margin="510,918,0,0" VerticalAlignment="Top" Width="130" Height="130" Background="#343A40" BorderThickness="0" Click="YESbutton_Click">
+            <Image Source="/heart.png"/>
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Template">
@@ -1716,7 +1725,7 @@
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}">
+                                BorderThickness="{TemplateBinding BorderThickness}" RenderTransformOrigin="0.576,-0.171">
                                     <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
@@ -1800,6 +1809,12 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBox x:Name="personData" Grid.Column="1" HorizontalAlignment="Left" Margin="910,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="900" Width="550" Background="#DEE2E6"/>
+        <TextBox Padding="20" x:Name="personData" Grid.Column="1" HorizontalAlignment="Left" Margin="910,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="900" Width="550" Background="#DEE2E6"/>
+        <Button Width="32" BorderThickness="0" Background="Transparent" x:Name="close" Grid.Column="1" HorizontalAlignment="Left" Margin="1478,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.22,0.513" Click="close_Click">
+            <Image Source="/close.png" Width="30"/>
+        </Button>
+        <Button Grid.Column="1" BorderThickness="0" Background="Transparent" HorizontalAlignment="Left" Margin="785,60,0,0" VerticalAlignment="Top">
+            <Image Width="70" Source="/matches.png"/>
+        </Button>
     </Grid>
 </Window>

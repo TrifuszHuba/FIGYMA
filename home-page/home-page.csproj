@@ -10,26 +10,60 @@
 
   <ItemGroup>
     <None Remove="52-528870_green-tick-clipart-benefit-green-check-mark-hd.png" />
-    <None Remove="cross.png" />
+    <None Remove="close.png" />
+    <None Remove="heart.png" />
+    <None Remove="img0_perm.jpg" />
+    <None Remove="img1_perm.jpg" />
+    <None Remove="img2_perm.jpg" />
+    <None Remove="img3_perm.jpg" />
+    <None Remove="img4_perm.jpg" />
     <None Remove="left-arrow.png" />
+    <None Remove="matches.png" />
     <None Remove="red-cross-mark-png-transparent-images-red-x-mark-transparent-11563359010asbhytefsx.png" />
     <None Remove="right-arrow.png" />
-    <None Remove="tick.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="cross.png">
+    <Resource Include="close.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="heart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img0_perm.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img1_perm.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img2_perm.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img3_perm.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img4_perm.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="left-arrow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="matches.png" />
     <Resource Include="right-arrow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="tick.png">
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="api_key.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
+    <None Update="bio_generation.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="image_generation.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

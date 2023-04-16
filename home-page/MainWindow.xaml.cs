@@ -32,6 +32,8 @@ namespace home_page
         public MainWindow()
         {
             InitializeComponent();
+            generateDescriptionList();
+            personData.Text = descriptionList[index];
         }
 
         private void btnDropdown_Click(object sender, RoutedEventArgs e)
@@ -346,6 +348,16 @@ namespace home_page
             borderBoldHair_Click(sender,e);
         }
 
+        int index = 0;
+        List<string> descriptionList = new List<string>();
+        private void generateDescriptionList()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                string text = File.ReadAllText($"bio{i}.txt");
+                descriptionList.Add(text);
+            }
+        }
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
             List<string> data = new List<string>();
@@ -354,7 +366,8 @@ namespace home_page
             {
                 data.Add("man");
             }
-            else if (chbMale.IsChecked == false && chbFemale.IsChecked == true) {
+            else if (chbMale.IsChecked == false && chbFemale.IsChecked == true)
+            {
                 data.Add("woman");
             }
             else if (chbMale.IsChecked == true && chbFemale.IsChecked == true)
@@ -365,9 +378,9 @@ namespace home_page
             {
                 data.Add("human");
             }
-                data.Add(heightForAI);
-                data.Add(bodyTypeFromBMI);
-                data.Add(modelPickerColor);
+            data.Add(heightForAI);
+            data.Add(bodyTypeFromBMI);
+            data.Add(modelPickerColor);
             if (int.Parse(tbLimbs.Text) < 4)
             {
                 data.Add("disabled");
@@ -377,112 +390,124 @@ namespace home_page
                 data.Add(" ");
             }
             data.Add(age);
-            data.Add(hairColor);
+            if (hairColor != "")
+            {
+                data.Add($"with {hairColor} hair");
+            }
+            else
+            {
+                data.Add(" ");
+            }
+            
+            
 
             File.WriteAllLines("personData.txt", data);
 
             Process process = new Process();
             process.StartInfo.FileName = "python";
-            process.StartInfo.Arguments = "/image_generation.py";
+            process.StartInfo.Arguments = "image_generation.py";
             process.Start();
             process.WaitForExit();
+
 
             process.StartInfo.FileName = "python";
-            process.StartInfo.Arguments = "/bio_generation.py";
+            process.StartInfo.Arguments = "bio_generation.py";
             process.Start();
             process.WaitForExit();
-            //Thread.Sleep(10000);
 
-            for (int i = 0; i < 5; i++)
-            {
-                Image img = new Image();
-                img.Source = new BitmapImage(new Uri($"image{i}.jpg", UriKind.Relative));
-                peopleImages.Add(img);
-                peopleBios.Add($"bio{i}.txt");
-            }
-            imagePath = Path.GetFullPath($"image0.jpg");
-            picture.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
-            index = 0;
-            //personDataWrite();
+            generateDescriptionList();
+
+            personData.Text = descriptionList[index];
+
         }
 
-        int index;
-        string imagePath;
+        private void PerviousImage()
+        {
+            if (index != 0)
+            {
+                index--;
+                for (int i = 0; i < canvasImages.Children.Count; i++)
+                {
+                    canvasImages.Children[i].Visibility = Visibility.Hidden;
+                }
+                canvasImages.Children[index].Visibility = Visibility.Visible;
+                personData.Text = descriptionList[index];
+
+            }
+        }
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
-            if (index > 0)
-            {
-                imagePath = Path.GetFullPath(peopleImages[index - 1].Source.ToString());
-                picture.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
-                index--;
-            }
-            else
-            {
-                imagePath = Path.GetFullPath(peopleImages[peopleImages.Count - 1].Source.ToString());
-                picture.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
-            }
-            //personDataWrite();
-            if (greenBorder != null)
-            {
-                greenBorder.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                greenBorder.Visibility = Visibility.Collapsed;
-            }
+            PerviousImage();
         }
 
+        private void NextImage()
+        {
+            if (index < canvasImages.Children.Count)
+            {
+                for (int i = 0; i < canvasImages.Children.Count; i++)
+                {
+                    canvasImages.Children[i].Visibility = Visibility.Hidden;
+                }
+                canvasImages.Children[index].Visibility = Visibility.Visible;
+            }
+            personData.Text = descriptionList[index];
+        }
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            if (index < peopleBios.Count-1)
+            if (canvasImages.Children.Count != 0)
             {
-                imagePath = Path.GetFullPath(peopleImages[index + 1].Source.ToString());
-                picture.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
-                index++;
-            }
-            else
-            {
-                imagePath = Path.GetFullPath(peopleImages[0].Source.ToString());
-                picture.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
-            }
-            //personDataWrite();
-            if (greenBorder != null)
-            {
-                greenBorder.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                greenBorder.Visibility = Visibility.Collapsed;
+                if (index < canvasImages.Children.Count - 1)
+                {
+                    index++;
+                }
+                NextImage();
             }
         }
-
-        private void personDataWrite()
-        {
-            string filePath = Path.GetFullPath($"bio{index}.txt");
-            string bio = File.ReadAllLines(filePath).ToString();
-            personData.Text = bio;
-        }
-
+        
         private void NObutton_Click(object sender, RoutedEventArgs e)
         {
-            peopleImages.Remove(peopleImages[index]);
-            peopleBios.Remove(peopleBios[index]);
-            index--;
-            nextButton_Click(nextButton,null);
+            canvasImages.Children.RemoveAt(index);
+            descriptionList.RemoveAt(index);
+            if (canvasImages.Children.Count != 0)
+            {
+                if (index > 0)
+                {
+                    PerviousImage();
+                }
+                else
+                {
+                    NextImage();
+                }
+            }
         }
-
+        List<UIElement> matchedPeople = new List<UIElement>();
         private void YESbutton_Click(object sender, RoutedEventArgs e)
         {
-            int rnd2 = random.Next(1,101);
-            greenBorder.Margin = new Thickness(picture.Margin.Left - 2, picture.Margin.Top - 2, 0, 0);
-            greenBorder.Visibility = Visibility.Visible;
-            if (rnd2 < 80)
+            int rnd = random.Next(1, 101);
+            if (rnd < 80)
             {
                 MessageBox.Show("IT'S A MATCH!");
-                greenBorder.BorderThickness = new Thickness(15);
-                greenBorder.BorderBrush = Brushes.LightPink;
-                greenBorder.CornerRadius = new CornerRadius(40);
+                matchedPeople.Add(canvasImages.Children[index]);
             }
+            canvasImages.Children.RemoveAt(index);
+            descriptionList.RemoveAt(index);
+            if (canvasImages.Children.Count != 0)
+            {
+                if (index >= 0)
+                {
+                    PerviousImage();
+                }
+                else
+                {
+                    NextImage();
+                }
+            }
+
+        }
+
+        private void close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

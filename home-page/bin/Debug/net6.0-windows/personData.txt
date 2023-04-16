@@ -1,7 +1,7 @@
-human
-
-
-
+man
+tall
+skinny
+Asian
  
-
-
+adult
+with brown hair
