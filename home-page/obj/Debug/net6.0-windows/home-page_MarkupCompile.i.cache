@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\hubat\Desktop\hasznaltember.eu\home-page\obj\Debug\net6.0-windows\
+C:\Users\hubat\Desktop\asd\hasznaltember.eu\home-page\obj\Debug\net6.0-windows\
 home_page
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\hubat\Desktop\hasznaltember.eu\home-page\App.xaml
-11407045341
+C:\Users\hubat\Desktop\asd\hasznaltember.eu\home-page\App.xaml
+4671077165
 
-5838275039
+8-1765413388
 1942030480316
-MainWindow.xaml;
+CreateAccount.xaml;Login.xaml;MainWindow.xaml;ResetPassword.xaml;
 
-True
+False
 

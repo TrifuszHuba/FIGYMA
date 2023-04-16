@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hubat\\Desktop\\hasznaltember.eu\\home-page\\home-page.csproj",
+      "projectUniqueName": "C:\\Users\\hubat\\Desktop\\asd\\hasznaltember.eu\\home-page\\home-page.csproj",
       "projectName": "home-page",
-      "projectPath": "C:\\Users\\hubat\\Desktop\\hasznaltember.eu\\home-page\\home-page.csproj",
+      "projectPath": "C:\\Users\\hubat\\Desktop\\asd\\hasznaltember.eu\\home-page\\home-page.csproj",
       "packagesPath": "C:\\Users\\hubat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hubat\\Desktop\\hasznaltember.eu\\home-page\\obj\\",
+      "outputPath": "C:\\Users\\hubat\\Desktop\\asd\\hasznaltember.eu\\home-page\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hubat\\AppData\\Roaming\\NuGet\\NuGet.Config",
