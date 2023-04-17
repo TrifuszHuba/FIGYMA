@@ -66,13 +66,13 @@ html body .container .title_container .title_top {
   align-self: flex-start;
   animation: scroll_title_left 0.3s forwards;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.2s);
+  animation-delay: calc(var(--scroll) * -0.6s);
 }
 html body .container .title_container .title_bottom {
   align-self: flex-end;
   animation: scroll_title_right 0.4s forwards;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.2s);
+  animation-delay: calc(var(--scroll) * -0.6s);
 }
 html body .content {
   width: 100vw;
@@ -137,4 +137,35 @@ html body .content .project p {
 html body .content .project img {
   width: 5vw;
   padding: 0.8vw;
+}
+html body .content .clone p {
+  font-size: 1.1vw;
+  margin: 0.3vw;
+}
+html body .content .clone .clone_link {
+  background-color: rgb(10, 10, 10);
+  border-color: #797979;
+  border-style: solid;
+  border-radius: 10vw;
+  padding: 0.3vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+html body .content .clone .clone_link .link {
+  font-size: 0.8vw;
+  border-right: solid;
+  border-color: #797979;
+  padding: 0.7vw;
+}
+html body .content .clone .clone_link .copy a {
+  cursor: pointer;
+}
+html body .content .clone .clone_link .copy a img {
+  width: 1.2vw;
+  margin-left: 1vw;
+  transform: translateY(0.1vw);
 }/*# sourceMappingURL=style.css.map */

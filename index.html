@@ -8,6 +8,7 @@
 
     <script defer src="scripts/title_animation.js"></script>
     <script defer src="scripts/fade_in_on_scroll.js"></script>
+    <script defer src="scripts/copy_to_clipboard.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,10 +77,8 @@
                         Lakáskulcsot sem hord magával, hogy minden alkalommal, mikor hazaér, további gyakorlatra tegyen
                         szert.
                         Saját fejlesztésű, forradalmi adattitkosításával még a NASA kvantumszámítógépei sem bírnak el.
-                        Aki az alkalmazásunkat használja a legfelsőbb biztonságban tudhatja adatait*, mivel tudja, hogy
+                        Aki az alkalmazásunkat használja a legfelsőbb biztonságban tudhatja adatait, mivel tudja, hogy
                         Papp Zsombor kezeli azokat.
-                    <h6 style="font-size: 0.4vw;">*Teljes körű tájékoztatás érdekében olvassa el a <a href="#"
-                            style="text-decoration: none; color: black;">ToS</a> kiadványunkat!</h6>
                     </p>
                     <br>
                     <h3>Munkaköre:</h3>
@@ -121,9 +120,20 @@
             </div>
         </div>
 
-        <div class="project block">
+        <div class="project block" style="margin-bottom: 5vw;">
             <h1>Projekt</h1>
-            <p class="block">Tekintse meg a projektünk részleteit a <a href="https://github.com/TrifuszHuba/hasznaltember.eu/projects?query=is%3Aopen" target="_blank"><img src="images/github_logo.png"></a> oldalunkon.</p>
+            <p class="block">Tekintsd meg a projektünk részleteit a <a href="https://github.com/TrifuszHuba/hasznaltember.eu/projects?query=is%3Aopen" target="_blank"><img src="images/github_logo.png"></a> oldalunkon.</p>
+        </div>
+
+        <div class="clone block">
+            <div class="block">
+                <h1>Clone</h1>
+                <p>Klónold le a projektünket Github-ról!</p>
+                <div class="clone_link">
+                    <div class="link">https://github.com/TrifuszHuba/hasznaltember.eu.git</div>
+                    <div class="copy"><a onclick="CopyToClipboard()"><img src="images/copy.png"></a></div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
