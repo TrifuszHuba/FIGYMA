@@ -423,6 +423,8 @@ namespace home_page
 
         private void PerviousImage()
         {
+            
+
             if (index != 0)
             {
                 index--;
@@ -437,11 +439,16 @@ namespace home_page
         }
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
-            PerviousImage();
+            if (canvasImages.Children.Count != 0)
+            {
+                PerviousImage();
+            }
         }
 
         private void NextImage()
         {
+            
+
             if (index < canvasImages.Children.Count)
             {
                 for (int i = 0; i < canvasImages.Children.Count; i++)
@@ -466,6 +473,66 @@ namespace home_page
         
         private void NObutton_Click(object sender, RoutedEventArgs e)
         {
+            if (canvasImages.Children.Count != 0)
+            {
+                canvasImages.Children.RemoveAt(index);
+                descriptionList.RemoveAt(index);
+                if (canvasImages.Children.Count != 0)
+                {
+                    if (index > 0)
+                    {
+                        PerviousImage();
+                    }
+                    else
+                    {
+                        NextImage();
+                    }
+                }
+            }
+        }
+        List<UIElement> matchedPeople = new List<UIElement>();
+        private void YESbutton_Click(object sender, RoutedEventArgs e)
+        {
+            if (canvasImages.Children.Count != 0)
+            {
+                int rnd = random.Next(1, 101);
+                if (rnd < 50)
+                {
+                    itsAMatch.Visibility = Visibility.Visible;
+                    matchedPeople.Add(canvasImages.Children[index]);
+                }
+                else
+                {
+                    canvasImages.Children.RemoveAt(index);
+                    descriptionList.RemoveAt(index);
+                    if (canvasImages.Children.Count != 0)
+                    {
+                        if (index > 0)
+                        {
+                            PerviousImage();
+                        }
+                        else
+                        {
+                            NextImage();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void matchButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void okMatchButton_Click(object sender, RoutedEventArgs e)
+        {
+            itsAMatch.Visibility = Visibility.Collapsed;
             canvasImages.Children.RemoveAt(index);
             descriptionList.RemoveAt(index);
             if (canvasImages.Children.Count != 0)
@@ -479,35 +546,6 @@ namespace home_page
                     NextImage();
                 }
             }
-        }
-        List<UIElement> matchedPeople = new List<UIElement>();
-        private void YESbutton_Click(object sender, RoutedEventArgs e)
-        {
-            int rnd = random.Next(1, 101);
-            if (rnd < 80)
-            {
-                MessageBox.Show("IT'S A MATCH!");
-                matchedPeople.Add(canvasImages.Children[index]);
-            }
-            canvasImages.Children.RemoveAt(index);
-            descriptionList.RemoveAt(index);
-            if (canvasImages.Children.Count != 0)
-            {
-                if (index >= 0)
-                {
-                    PerviousImage();
-                }
-                else
-                {
-                    NextImage();
-                }
-            }
-
-        }
-
-        private void close_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

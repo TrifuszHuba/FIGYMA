@@ -1809,12 +1809,74 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBox Padding="20" x:Name="personData" Grid.Column="1" HorizontalAlignment="Left" Margin="910,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="900" Width="550" Background="#DEE2E6"/>
+        <TextBlock Padding="20" x:Name="personData" Grid.Column="1" HorizontalAlignment="Left" Margin="910,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="900" Width="550" Background="#DEE2E6"/>
         <Button Width="32" BorderThickness="0" Background="Transparent" x:Name="close" Grid.Column="1" HorizontalAlignment="Left" Margin="1478,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.22,0.513" Click="close_Click">
             <Image Source="/close.png" Width="30"/>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              RecognizesAccessKey="True"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
         </Button>
-        <Button Grid.Column="1" BorderThickness="0" Background="Transparent" HorizontalAlignment="Left" Margin="785,60,0,0" VerticalAlignment="Top">
+        <Button Width="70" Height="70" x:Name="matchButton" Grid.Column="1" BorderThickness="0" Background="Transparent" HorizontalAlignment="Left" Margin="785,60,0,0" VerticalAlignment="Top" Click="matchButton_Click">
             <Image Width="70" Source="/matches.png"/>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              RecognizesAccessKey="True"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
         </Button>
+        <TextBlock Visibility="Collapsed" Foreground="Purple" Width="600" Height="162" x:Name="itsAMatch" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Background="#33F76AF2" TextAlignment="Center"  FontSize="72" FontWeight="Bold" Margin="145,0,0,0">
+            It's a match!
+            <Button x:Name="okMatchButton" Width="200" Height="50" FontSize="36" Click="okMatchButton_Click" >
+                OK
+            </Button>
+        </TextBlock>
     </Grid>
 </Window>
