@@ -1878,5 +1878,6 @@
                 OK
             </Button>
         </TextBlock>
+        <Image Visibility="Collapsed" x:Name="noBitches" Grid.Column="1" HorizontalAlignment="Left" Height="776" Margin="560,157,0,0" VerticalAlignment="Top" Width="703" Source="/no_bitches.png"/>
     </Grid>
 </Window>

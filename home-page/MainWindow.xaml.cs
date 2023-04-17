@@ -184,7 +184,7 @@ namespace home_page
 
         string heightForAI = "";
         int height = 0;
-        private void Height()
+        private new void Height()
         { 
             if (minHeight > 170 && maxHeight > 180)
             {
@@ -527,7 +527,14 @@ namespace home_page
 
         private void matchButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (noBitches.Visibility == Visibility.Collapsed)
+            {
+                noBitches.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                noBitches.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void okMatchButton_Click(object sender, RoutedEventArgs e)
